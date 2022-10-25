@@ -1,4 +1,4 @@
-<p style="font-size: 20px;"><b>Thêm nhà cung cấp sản phẩm</b></p>
+<p style="font-size: 20px;margin-top:15px;"><b>Thêm nhà cung cấp sản phẩm</b></p>
 <table class="table table-hover table-dark" border="1px" style="width: 50%;" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlynhacungcap/xuly.php">
         <tr>

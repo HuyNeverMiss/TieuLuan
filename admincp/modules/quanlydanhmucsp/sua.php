@@ -2,7 +2,7 @@
     $sql_sua_danhmuc_sp = "SELECT * FROM tbl_danhmuc WHERE id_danhmuc='$_GET[iddanhmuc]' LIMIT 1";
     $query_sua_danhmuc_sp = mysqli_query($mysqli,$sql_sua_danhmuc_sp);
 ?>
-<p style="font-size: 20px;">Sửa danh mục sản phẩm</p>
+<p style="font-size: 20px;margin-top:15px;"><b>Điều chỉnh danh mục</b></p>
 <table class="table table-hover table-dark" border="1px" style="width: 50%;" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlydanhmucsp/xuly.php?iddanhmuc=<?php echo $_GET['iddanhmuc']?>">
         <?php
@@ -17,7 +17,7 @@
             <td><input type="text" value="<?php echo $dong['thutu'] ?>" name="thutu"></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" name="suadanhmuc" value="Sửa danh mục"></td>
+            <td colspan="2"><input type="submit" name="suadanhmuc" value="Điều chỉnh danh mục"></td>
         </tr>
         <?php
     }

@@ -8,7 +8,7 @@
 		$sql_update ="UPDATE tbl_donhang SET donhang_tinhtrang=0 WHERE code_donhang='".$code_donhang."'";
 		$query = mysqli_query($mysqli,$sql_update);
     
-		//thong ke doanh thu
+		//Thong ke doanh thu
         $sql_lietke_dh = "SELECT * FROM tbl_chitietdonhang,tbl_sanpham WHERE tbl_chitietdonhang.id_sanpham=tbl_sanpham.id_sanpham AND tbl_chitietdonhang.code_donhang='$code_donhang' ORDER BY tbl_chitietdonhang.id_chitietdonhang DESC";
         $query_lietke_dh = mysqli_query($mysqli,$sql_lietke_dh);
 
@@ -22,8 +22,9 @@
             $id_nh = $row['id_nh'];
             $tensanpham = $row['tensanpham'];
             $soluong = $row['SoLuong'];
+            $sale = $row['sale'];
             $soluongmua+=$row['SoLuong'];
-            $doanhthu+=$row['giasp']*$row['SoLuong'];
+            $doanhthu+=($row['giasp']-($row['giasp']*$row['sale']/100))*$row['SoLuong'];
             $trusoluongtrongkho = mysqli_query($mysqli,"UPDATE `tbl_sanpham` SET soluong = CASE 
                 WHEN id_sanpham=$id then soluong-$soluong
                 END WHERE id_sanpham in ($id)");

@@ -2,7 +2,7 @@
     $sql_sua_sp = "SELECT * FROM tbl_nhaphang WHERE id_nhaphang='$_GET[idnhaphang]' LIMIT 1";
     $query_sua_sp = mysqli_query($mysqli,$sql_sua_sp);
 ?>
-<p style="font-size: 20px;"><b>Sửa sản phẩm</b></p>
+<p style="font-size: 20px;margin-top:15px;"><b>Điều chỉnh nhập hàng</b></p>
 <table class="table table-hover table-dark" border="1px" style="width: 100%;" style="border-collapse: collapse;">
     <?php
   while($row = mysqli_fetch_array($query_sua_sp)){
@@ -74,7 +74,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" name="suanhaphang" value="Sửa nhập hàng"></td>
+            <td colspan="2"><input type="submit" name="suanhaphang" value="Điều chỉnh nhập hàng"></td>
         </tr>
     </form>
     <?php

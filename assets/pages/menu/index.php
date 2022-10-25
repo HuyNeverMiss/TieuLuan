@@ -19,7 +19,7 @@
     <?php
 				while($row = mysqli_fetch_array($query_pro)){ 
 			?>
-    <li>
+    <li style="border-radius: 10%;">
         <?php
         if($row['sale']=='0'){
         ?>
@@ -81,7 +81,7 @@ $sql_trang = mysqli_query($mysqli,"SELECT * FROM tbl_sanpham");
 $row_count = mysqli_num_rows($sql_trang);  
 $trang = ceil($row_count/10);
 ?>
-<p>Trang hiện tại : <?php echo $page ?>/<?php echo $trang ?> </p>
+<p style="font-weight: 600;">Trang hiện tại : <?php echo $page ?>/<?php echo $trang ?> </p>
 
 <ul class="list_trang">
 
@@ -119,7 +119,7 @@ $trang = ceil($row_count/10);
     <?php
 				while($row = mysqli_fetch_array($query_pro1)){ 
 			?>
-    <li>
+    <li style="border-radius: 10%;">
         <?php
         if($row['sale']=='0'){
         ?>
@@ -181,7 +181,7 @@ $sql_trang1 = mysqli_query($mysqli,"SELECT * FROM tbl_sanpham WHERE tbl_sanpham.
 $row_count1 = mysqli_num_rows($sql_trang1);  
 $trang1 = ceil($row_count1/5);
 ?>
-<p>Trang hiện tại : <?php echo $page1 ?>/<?php echo $trang1 ?> </p>
+<p style="font-weight: 600;">Trang hiện tại : <?php echo $page1 ?>/<?php echo $trang1 ?> </p>
 
 <ul class="list_trang1">
 

@@ -2,8 +2,8 @@
 	$sql_lietke_bv = "SELECT * FROM tbl_tintuc ORDER BY tbl_tintuc.id DESC";
 	$query_lietke_bv = mysqli_query($mysqli,$sql_lietke_bv);
 ?>
-<p><b>Liệt kê danh mục bài viết</b></p>
-<table class="table hover table-dark" style="width:100%" border="1" style="border-collapse: collapse;">
+<p style="font-size: 20px;margin-top:15px;"><b>Liệt kê bài viết</b></p>
+<table style="text-align:center" class="table hover table-dark" style="width:100%" border="1" style="border-collapse: collapse;">
     <tr>
         <th>Id</th>
         <th>Tên tin tức</th>
@@ -20,10 +20,10 @@
   ?>
     <tr>
         <td><?php echo $i ?></td>
-        <td><?php echo $row['tentintuc'] ?></td>
+        <td style="text-align:justify"><?php echo $row['tentintuc'] ?></td>
         <td><img src="modules/quanlytintuc/uploads/<?php echo $row['hinhanh'] ?>" width="150px"></td>
-        <td><?php echo $row['tomtat'] ?></td>
-        <td><?php echo $row['noidung'] ?></td>
+        <td style="text-align:justify"><?php echo $row['tomtat'] ?></td>
+        <td style="text-align:justify"><?php echo $row['noidung'] ?></td>
         <td><?php if($row['tinhtrang']==1){
         echo 'Kích hoạt';
       }else{

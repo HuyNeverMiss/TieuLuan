@@ -4,6 +4,38 @@
     echo 'xin chào: '.'<span style="color:red">'.$_SESSION['dangky'].'</span>'; 
   } 
   ?>
+            <div class="col-md-8">
+           <?php
+    if(isset($_SESSION['id_khachhang'])){
+        $id=$_SESSION['id_khachhang'];
+        $sql = "SELECT * FROM tbl_khachhang WHERE id_khachhang=$id";
+        $query = mysqli_query($mysqli,$sql);
+        while($row = mysqli_fetch_array($query)){
+     ?>   
+        <h1 style="font-weight:700;">Thông Tin Khách Hàng</h1>
+        <table class="table table-striped">
+                <thead>
+                     <th>Tên khách hàng</th>
+                     <th>Email</th>
+                     <th>Địa Chỉ</th>
+                     <th>Số Điện Thoại</th>
+                </thead>
+                <tbody>
+                       <tr>
+                                <th><?php echo $row['tenkhachhang']?></th>
+                                <th><?php echo $row['email']?></th>
+                                <th><?php echo $row['diachi']?></th>
+                                <th><?php echo $row['dienthoai']?></th>
+                        </tr>
+                       <?php
+        }
+                       ?>
+                </tbody>
+        </table> 
+    <?php
+    }
+    ?>
+           </div>
 </p>
 <?php
 	if(isset($_SESSION['cart'])){
@@ -15,7 +47,7 @@
 ?>
 <div class="container1">
     <!-- Responsive Arrow Progress Bar -->
-    <div class="arrow-steps clearfix">
+    <div style="font-weight: 600;" class="arrow-steps clearfix">
         <div class="step current"> <span> <a href="index.php?quanly=giohang#main_list">Giỏ hàng</a></span> </div>
         <div class="step"> <span><a href="index.php?quanly=vanchuyen#main_list">Vận chuyển</a></span> </div>
         <div class="step"> <span><a href="index.php?quanly=thongtinthanhtoan#main_list">Thông tin thanh toán</a><span>
@@ -26,7 +58,7 @@
   }
 ?>
 
-<table class="table table-hover table-dark" style="width:100%;text-align: center;border-collapse: collapse;" border="5">
+<table class="table table-hover table-dark" style="width:100%;text-align: center;border-collapse: collapse;font-weight:600;" border="5">
     <tr>
         <th>Id</th>
         <th>Mã sp</th>
@@ -55,13 +87,15 @@
         <td> 
             <a href="assets/pages/menu/themgiohang.php?cong=<?php echo $cart_item['id'] ?>#main_list"><i
                     class="fa fa-plus fa-style" aria-hidden="true"></i></a>
-            <?php echo $cart_item['soluong']; ?>
+            <form>
+              <input type="text" name="soluong" value="<?php echo $cart_item['soluong']; ?>">
+            </form>
             <a href="assets/pages/menu/themgiohang.php?tru=<?php echo $cart_item['id'] ?>#main_list"><i
                     class="fa fa-minus fa-style" aria-hidden="true"></i></a>
         </td>
-        <td><?php echo number_format($cart_item['giasp'],0,',','.').'vnđ'; ?></td>
+        <td><?php echo number_format($cart_item['giasp'],0,',','.').'đ'; ?></td>
         <td><?php echo number_format($cart_item['sale']).'%' ?></td>
-        <td><?php echo number_format($thanhtien,0,',','.').'vnđ' ?></td>
+        <td><?php echo number_format($thanhtien,0,',','.').'đ' ?></td>
         <td><a href="assets/pages/menu/themgiohang.php?xoa=<?php echo $cart_item['id'] ?>#main_list"><i class="ti-close"></i></a></td>
     </tr>
     <?php
@@ -69,7 +103,7 @@
   ?>
     <tr>
         <td colspan="8">
-            <p style="float: left;"><b>Tổng tiền: </b><?php echo number_format($tongtien,0,',','.').'vnđ' ?></p><br />
+            <p style="float: left;color:lightgreen;"><b>Tổng tiền: </b><?php echo number_format($tongtien,0,',','.').'đ' ?></p><br />
             <p style="float: right;"><a href="assets/pages/menu/themgiohang.php?xoatatca=1#main_list"><b><i class="ti-trash"></i></b></a></p>
             <div style="clear: both;"></div>
             <?php

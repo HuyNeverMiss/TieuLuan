@@ -1,15 +1,14 @@
-<p class="content1">Liệt kê đơn hàng</p>
+<p class="content1" style="margin-top:15px;">Liệt kê đơn hàng</p>
 <?php
 	$sql_lietke_dh = "SELECT * FROM tbl_donhang,tbl_khachhang WHERE tbl_donhang.id_khachhang=tbl_khachhang.id_khachhang 
   ORDER BY tbl_donhang.id_donhang DESC";
 	$query_lietke_dh = mysqli_query($mysqli,$sql_lietke_dh);
 ?>
-<table class="table hover table-dark" style="width:100%" border="1" style="border-collapse: collapse;">
+<table style="text-align:center" class="table table-hover table-dark" style="width:100%" border="1" style="border-collapse: collapse;">
     <tr>
         <th>Id</th>
         <th>Mã đơn hàng</th>
         <th>Tên khách hàng</th>
-        <th>Địa chỉ</th>
         <th>Email</th>
         <th>Số điện thoại</th>
         <th>Ngày đặt hàng</th>
@@ -27,11 +26,10 @@
         <td><?php echo $i ?></td>
         <td><?php echo $row['code_donhang'] ?></td>
         <td><?php echo $row['tenkhachhang'] ?></td>
-        <td><?php echo $row['diachi'] ?></td>
         <td><?php echo $row['email'] ?></td>
-        <td><?php echo $row['dienthoai'] ?></td>
+        <td><?php echo '0'.number_format($row['dienthoai'],0,',','.')?></td>
         <td><?php echo $row['ngaydh'] ?></td>
-        <td><p style="text-align:center ;padding: 10px 15px; border-radius: 4px; background-color: blue; color:aliceblue;"><?php echo $row['donhang_thanhtoan'] ?></p></td>
+        <td><p style="text-align:center ;padding: 10px 15px; border-radius: 4px; background-color: #0062cc; color:aliceblue;"><?php echo $row['donhang_thanhtoan'] ?></p></td>
         <td>
             <?php if($row['donhang_tinhtrang']==1){
     		echo '<a style="

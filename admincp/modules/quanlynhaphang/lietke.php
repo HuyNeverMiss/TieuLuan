@@ -4,8 +4,8 @@
     $query_lietke_sp = mysqli_query($mysqli,$sql_lietke_sp);
 ?>
 
-<p style="font-size: 20px;"><b>Chi tiết nhập hàng</b></p>
-<table class="table table-hover table-dark" style="width: 100%;" border="1" style="border-collapse: collapse;">
+<p style="font-size: 20px;margin-top:15px;"><b>Chi tiết nhập hàng</b></p>
+<table style="text-align:center" class="table table-hover table-dark" style="width: 100%;" border="1" style="border-collapse: collapse;">
     <tr>
         <th>ID</th>
         <th>Tên sản phẩm</th>
@@ -28,10 +28,10 @@
         <td><?php echo $row['tensanpham'] ?></td>
         <td><img src="modules/quanlynhaphang/uploads/<?php echo $row['hinhanh'] ?>" width="150px"></td>
         <td><?php echo $row['tennhacungcap'] ?></td>
-        <td><?php echo number_format($row['gianhap'],0,',','.').'vnđ' ?></td>
+        <td><?php echo number_format($row['gianhap'],0,',','.').'đ' ?></td>
         <td><?php echo $row['soluong1'] ?></td>
         <td><?php echo $row['soluongdaban'] ?></td>
-        <td><?php echo number_format($row['gianhap']*$row['soluong1'],0,',','.').'vnđ'?></td>
+        <td><?php echo number_format($row['gianhap']*$row['soluong1'],0,',','.').'đ'?></td>
         <td><?php if($row['tinhtrang']==1) {
         echo 'Đã thanh toán';
       }else{

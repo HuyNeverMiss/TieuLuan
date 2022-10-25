@@ -1,13 +1,13 @@
 <p class="content">Thông tin vận chuyển</p>
 <div class="container1">
     <!-- Responsive Arrow Progress Bar -->
-    <div class="arrow-steps clearfix">
+    <div style="font-weight: 600;" class="arrow-steps clearfix">
         <div class="step"> <span> <a href="index.php?quanly=giohang#main_list">Giỏ hàng</a></span> </div>
         <div class="step current"> <span><a href="index.php?quanly=vanchuyen#main_list">Vận chuyển</a></span> </div>
         <div class="step"> <span><a href="index.php?quanly=thongtinthanhtoan#main_list">Thông tin thanh toán</a><span>
         </div>
     </div>
-    <h4>Thông tin vận chuyển</h4>
+    <h4> Thông tin vận chuyển</h4>
     <?php
         if(isset($_POST['themvanchuyen'])){
             $name = $_POST['name'];
@@ -51,7 +51,7 @@
             }
                
         ?>
-        <div class="col-md-4">
+        <div class="col-md-4" style="margin: 5px;font-weight:600;">
             <form action="" autocomplete="off" method="POST">
                 <div class="form-group">
                     <label for="email">Họ và tên</label>
@@ -84,7 +84,14 @@
             </form>
         </div>
         <!------------------------------Giỏ hàng------------------------------->
-        <table class="table table-hover table-dark" style="width:100%;text-align: center;border-collapse: collapse;"
+        <?php
+            if(!isset($_SESSION['cart'])){
+                echo "<script>alert('Vui lòng thêm sản phẩm vào giỏ hàng')
+                window.location.replace('index.php?quanly=giohang#main_list');
+                </script>";
+            }
+        ?>
+        <table class="table table-hover table-dark" style="width:100%;text-align: center;border-collapse: collapse;font-weight:600;"
             border="5">
             <tr>
                 <th>Id</th>
@@ -111,9 +118,7 @@
                 <td><?php echo $cart_item['tensanpham']; ?></td>
                 <td><img style="border-radius: 30%;" src="admincp/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh']; ?>" width="150px">
                 </td>
-                <td>
-                    <?php echo $cart_item['soluong']; ?>
-                </td>
+                <td><?php echo $cart_item['soluong']; ?></td>
                 <td><?php echo number_format($cart_item['giasp'],0,',','.').'vnđ'; ?></td>
                 <td><?php echo number_format($cart_item['sale']).'%' ?></td>
                 <td><?php echo number_format($thanhtien,0,',','.').'vnđ' ?></td>
@@ -123,7 +128,7 @@
   ?>
             <tr>
                 <td colspan="8">
-                    <p style="float: left;"><b>Tổng tiền: </b><?php echo number_format($tongtien,0,',','.').'vnđ' ?>
+                    <p style="float: left;color:lightgreen;"><b>Tổng tiền: </b><?php echo number_format($tongtien,0,',','.').'vnđ' ?>
                     </p>
                     <br />
                     <div style="clear: both;"></div>

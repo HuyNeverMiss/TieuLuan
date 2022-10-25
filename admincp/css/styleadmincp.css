@@ -56,13 +56,13 @@ p.content1 {
 h3.title_admin {
   margin: 0;
   text-align: center;
-  font-size: 55px;
+  font-size: 50px;
   color: #2c2c2c;
   background-color: slategray;
   letter-spacing: 0.05em;
   text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
-  height: 100px;
-  padding-top: 20px;
+  height: 75px;
+  padding-top: 5px;
   margin-top: 46px;
 }
 h3.title_admin a {
@@ -74,7 +74,7 @@ h3.title_admin a {
   position: relative;
   padding-top: 50%;
   margin-top: 0;
-  background: url(../../assets/img/img1.jpg) top center / cover no-repeat;
+  background: url('https://th.bing.com/th/id/R.ac54e843fecb86e5ad8e47bcf4596ce9?rik=May3TAWIHjIBBA&riu=http%3a%2f%2fwallpapers.net%2fweb%2fwallpapers%2fblue-sneakers-hd-wallpaper%2f3840x2160.jpg&ehk=6xIUiyI9tL7OUgWOIvS17YoNENxatlVA6u3wdG2CK8A%3d&risl=&pid=ImgRaw&r=0') top center / cover no-repeat;
 }
 
 #slider_admincp .text-content {
@@ -106,8 +106,8 @@ img {
 
 main {
   background-color: #dddddd;
-  min-height: 300px;
-  padding: 7.5px 15px;
+  min-height: 400px;
+  padding: 60px 15px;
 }
 #footer {
   background-color: lightslategray;

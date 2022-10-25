@@ -1,4 +1,4 @@
-<p style="font-size: 20px;"><b>Nhập hàng</b></p>
+<p style="font-size: 20px;margin-top:15px;"><b>Nhập hàng</b></p>
 <table class="table table-hover table-dark" border="1px" style="width: 100%;" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlynhaphang/xuly.php" enctype="multipart/form-data">
         <tr>

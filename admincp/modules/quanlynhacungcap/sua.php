@@ -2,7 +2,7 @@
     $sql_sua_nhacungcap_sp = "SELECT * FROM tbl_nhacungcap WHERE id ='$_GET[idncc]' LIMIT 1";
     $query_sua_nhacungcap_sp = mysqli_query($mysqli,$sql_sua_nhacungcap_sp);
 ?>
-<p style="font-size: 20px;">Sửa nhà cung cấp sản phẩm</p>
+<p style="font-size: 20px;margin-top:15px;"><b>Điều chỉnh nhà cung cấp</b></p>
 <table class="table table-hover table-dark" border="1px" style="width: 50%;" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlynhacungcap/xuly.php?idncc=<?php echo $_GET['idncc']?>">
         <?php
@@ -25,7 +25,7 @@
             <td><input type="text" value="<?php echo $dong['thutu'] ?>" name="thutu"></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" name="suanhacungcap" value="Sửa nhà cung cấp"></td>
+            <td colspan="2"><input type="submit" name="suanhacungcap" value="Điều chỉnh nhà cung cấp"></td>
         </tr>
         <?php
     }

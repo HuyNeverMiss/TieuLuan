@@ -15,12 +15,17 @@
 				$tangsoluong = $cart_item['soluong'] + 1;
 				if($cart_item['soluong'] < $row['soluong']){	
 					$product[]= array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$tangsoluong,'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp'],'sale'=>$cart_item['sale']);
+					header('Location:../../../index.php?quanly=giohang');
 				}else{
+					echo "<script>
+					alert('Số lượng tồn không đủ')
+					window.location.replace('../../../index.php?quanly=giohang#main_list');
+					</script>";
 					$product[]= array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$cart_item['soluong'],'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp'],'sale'=>$cart_item['sale']);	
 				}
 				$_SESSION['cart'] = $product;
 			}
-			header('Location:../../../index.php?quanly=giohang');
+			// header('Location:../../../index.php?quanly=giohang');
 		}
 	}
 	//Trừ số lượng
@@ -31,10 +36,10 @@
 				$product[]= array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$cart_item['soluong'],'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp'],'sale'=>$cart_item['sale']);
 				$_SESSION['cart'] = $product;
 			}else{
-				$tangsoluong = $cart_item['soluong'] - 1;
+				$trusoluong = $cart_item['soluong'] - 1;
 				if($cart_item['soluong']>1){
 					
-					$product[]= array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$tangsoluong,'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp'],'sale'=>$cart_item['sale']);
+					$product[]= array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$trusoluong,'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp'],'sale'=>$cart_item['sale']);
 				}else{
 					$product[]= array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$cart_item['soluong'],'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp'],'sale'=>$cart_item['sale']);
 				}
@@ -78,11 +83,16 @@
 				$found = false;
 				foreach($_SESSION['cart'] as $cart_item){
 					//Nếu dữ liệu bị trùng
-					if($cart_item['id']==$id){
+					if($cart_item['id']==$id && $cart_item['soluong'] < $row['soluong']){
 						$product[]= array('tensanpham'=>$cart_item['tensanpham'],
                         'id'=>$cart_item['id'],'soluong'=>$cart_item['soluong']+1,
                         'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp'],'sale'=>$cart_item['sale']);
 						$found = true;
+					}elseif($cart_item['id']==$id && $cart_item['soluong'] >= $row['soluong']){
+						echo "<script>
+							alert('Số lượng tồn không đủ (số lượng phải <= $row[soluong])')
+							window.location.replace('../../../index.php?quanly=sanpham&id=$id#main_list');
+							</script>";
 					}else{
 						//Nếu dữ liệu không trùng
 						$product[]= array('tensanpham'=>$cart_item['tensanpham'],
@@ -101,8 +111,9 @@
 			}
 
 		}
-		
-		header('Location:../../../index.php?quanly=giohang');
-		
+		echo "<script>
+		alert('Thêm giỏ hàng thành công')
+		window.location.replace('../../../index.php?quanly=sanpham&id=$id#main_list');
+		</script>";
 	}
 ?>

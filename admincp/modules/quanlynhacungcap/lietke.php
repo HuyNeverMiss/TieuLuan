@@ -2,8 +2,8 @@
     $sql_lietke_nhacungcap_sp = "SELECT * FROM tbl_nhacungcap ORDER BY thutu DESC";
     $query_lietke_nhacungcap_sp = mysqli_query($mysqli,$sql_lietke_nhacungcap_sp);
 ?>
-<p style="font-size: 20px;"><b>Liệt kê nhà cung cấp sản phẩm</b></p>
-<table class="table table-hover table-dark" style="width: 100%;" border="1" style="border-collapse: collapse;">
+<p style="font-size: 20px;margin-top:15px;"><b>Liệt kê nhà cung cấp</b></p>
+<table style="text-align:center" class="table table-hover table-dark" style="width: 100%;" border="1" style="border-collapse: collapse;">
     <tr>
         <th>ID</th>
         <th>Tên nhà cung cấp</th>

@@ -5,8 +5,8 @@
 	while($row_chitiet = mysqli_fetch_array($query_chitiet)){
 ?>
 <div class="wrapper_chitiet">
-    <div class="hinhanh_sanpham">
-        <img width="100%" src="admincp/modules/quanlysp/uploads/<?php echo $row_chitiet['hinhanh'] ?>">
+    <div class="hinhanh_sanpham" style="border-radius: 10%;">
+        <img style="border-radius: 10%;" width="100%" src="admincp/modules/quanlysp/uploads/<?php echo $row_chitiet['hinhanh'] ?>">
     </div>
     <form method="POST"
         action="assets/pages/menu/themgiohang.php?idsanpham=<?php echo $row_chitiet['id_sanpham'] ?>#main_list">
@@ -43,10 +43,9 @@
     <div class="clear"></div>
     <div class="tabs">
         <ul id="tabs-nav">
-            <li><a href="#tab1">Thông số kỹ thuật</a></li>
-            <li><a href="#tab2">Nội dung chi tiết</a></li>
-            <li><a href="#tab3">Hình ảnh sản phẩm</a></li>
-
+            <li><a href="#tab1">Nội dung</a></li>
+            <li><a href="#tab2">Hình ảnh sản phẩm</a></li>
+            <li><a href="#tab3">Bình luận && đánh giá</a></li>
         </ul> <!-- END tabs-nav -->
         <div id="tabs-content">
             <div id="tab1" class="tab-content" style="font-weight: 600;">
@@ -56,7 +55,65 @@
                 <?php echo $row_chitiet['noidung'] ?>
             </div>
             <div id="tab3" class="tab-content" style="font-weight: 600;">
-                <img width="30%" src="admincp/modules/quanlysp/uploads/<?php echo $row_chitiet['hinhanh'] ?>">
+            <div class="comment">
+            <form method="post" action="">
+                    <p style="width:98.8%; height:40px; background-color:rgb(235, 231, 231); text-align:center;font-size:30px;font-weight:700;line-height:40px;margin: 20px 10px;">Bình Luận</p>
+                <textarea name="comment" id="" cols="150" rows="3" placeholder="Bình luận tối thiểu phải 10 ký tự"></textarea>
+                <select id="star" name="star" style="color:#ff734ccc">
+                    <option value="1">★☆☆☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="5">★★★★★</option>
+                </select>
+                <?php 
+                if(isset($_SESSION['id_khachang'])){
+                    echo '<button class="btn-cmt" onclick="getValue()">Đăng</button>';
+                }
+                else{
+                    echo '<button class="btn-cmt" onclick="getValue()" disabled >Đăng</button>';
+                };
+            ?>
+            </form>            
+            <div class="user_cmt">
+                <ul style="list-style: none;">
+                    <?php
+                        if(isset($_GET['id_sanpham'])){
+                            $id=$_GET['id_sanpham'];
+                            $sql='select * from tbl_danhgia where '.$id.'=id_danhgia';
+                            $cmt_list=mysqli_query($mysqli,$sql);
+                            foreach ($cmt_list as $cmt_single){
+                                $sql = 'select * from khachhang where id_khachhang='.$cmt_single['id_khachhang'];
+                                    $user_fullname = mysqli_fetch_array($cmt_list);
+                                    echo '<li>
+                                            <span>'.$user_fullname['tenkhachhang'].'</span>
+                                            <span style="color:white">-</span>
+                                            <span style="color : #ff734ccc">';
+                                            $i=1;
+                                            for($i;$i<=5;$i++){
+                                                if($i<=$cmt_single['star']){
+                                                    echo '★';
+                                                    continue;
+                                                }
+                                                echo '☆';
+
+                                            }
+                                            echo '</span>
+                                            <p>'.$cmt_single['content_cmd'].'</p>
+                                        </li>';
+                              
+                            };
+                        };
+                    ?>
+                </ul>
+            </div>
+        </div>
+            <script> 
+            function getValue(){
+                var valueBtn = document.querySelector('textarea').value;
+                console.log(valueBtn)
+            }
+        </script>
             </div>
 
         </div> <!-- END tabs-content -->
@@ -82,7 +139,7 @@
     <?php
 				while($row = mysqli_fetch_array($query_pro1)){ 
 			?>
-    <li>
+    <li style="border-radius: 10%;">
         <?php
         if($row['sale']=='0'){
         ?>

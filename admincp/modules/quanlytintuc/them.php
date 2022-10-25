@@ -1,4 +1,4 @@
-<p><b>Thêm tin tức</b></p>
+<p style="font-size: 20px;margin-top:15px;"><b>Thêm tin tức</b></p>
 <table class="table hover table-dark" border="1" width="100%" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlytintuc/xuly.php" enctype="multipart/form-data">
         <tr>

@@ -5,7 +5,7 @@
   ORDER BY tbl_donhang.id_donhang DESC";
 	$query_lietke_dh = mysqli_query($mysqli,$sql_lietke_dh);
 ?>
-<table class="table hover table-dark" style="width:100%" border="1" style="border-collapse: collapse;">
+<table style="text-align:center" class="table hover table-dark" style="width:100%" border="1" style="border-collapse: collapse;">
     <tr>
         <th>Id</th>
         <th>Mã đơn hàng</th>

@@ -2,7 +2,7 @@
 	$sql_sua_bv = "SELECT * FROM tbl_tintuc WHERE id='$_GET[idtintuc]' LIMIT 1";
 	$query_sua_bv = mysqli_query($mysqli,$sql_sua_bv);
 ?>
-<p><b>Sửa tin tức</b></p>
+<p style="font-size: 20px;margin-top:15px;"><b>Điều chỉnh tin tức</b></p>
 <table class="table hover table-dark" border="1" width="100%" style="border-collapse: collapse;">
     <?php
 while($row = mysqli_fetch_array($query_sua_bv)) {
@@ -52,7 +52,7 @@ while($row = mysqli_fetch_array($query_sua_bv)) {
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" name="suatintuc" value="Sửa tin tức"></td>
+            <td colspan="2"><input type="submit" name="suatintuc" value="Điều chỉnh tin tức"></td>
         </tr>
     </form>
     <?php

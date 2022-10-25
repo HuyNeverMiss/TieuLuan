@@ -11,7 +11,7 @@
     <?php
 					while($row_pro = mysqli_fetch_array($query_pro)){ 
 					?>
-    <li>
+    <li style="border-radius: 10%;">
     <?php
         if($row_pro['sale']=='0'){
         ?>

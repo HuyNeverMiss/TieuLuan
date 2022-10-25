@@ -21,6 +21,7 @@
     <?php
             }
         ?>
+            <li><a href="index.php?quanly=giohang#main_list"><i class="ti-shopping-cart"></i>Giỏ hàng</a></li>
     <li>
         <a href="#main">
             More
@@ -29,12 +30,13 @@
         <ul class="submenu">
             <li><a href="index.php?quanly=tintuc#main_list">Tin tức</a></li>
             <li><a href="index.php?quanly=giohang#main_list">Giỏ hàng</a></li>
+            <li><a href="index.php?quanly=lienhe#footer-section">Liên hệ</a></li>
             <?php
                     if(isset($_SESSION['dangky'])){
                 ?>
-            <li><a href="index.php?dangxuat=1#main_list">Đăng xuất</a></li>
             <li><a href="index.php?quanly=doimatkhau#main_list">Đổi mật khẩu</a></li>
             <li><a href="index.php?quanly=lichsudonhang#main_list">Lịch sử đơn hàng</a></li>
+            <li><a style="color: red;" href="index.php?dangxuat=1#main_list">Đăng xuất</a></li>
             <?php
                 }else{
                 ?>
@@ -43,7 +45,6 @@
             <?php
                 }
                 ?>
-            <li><a href="index.php?quanly=lienhe#footer-section">Liên hệ</a></li>
         </ul>
     </li>
 </ul>

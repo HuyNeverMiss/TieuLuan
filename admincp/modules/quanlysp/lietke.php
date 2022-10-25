@@ -3,8 +3,8 @@
     ORDER BY id_sanpham DESC";
     $query_lietke_sp = mysqli_query($mysqli,$sql_lietke_sp);
 ?>
-<p style="font-size: 20px;"><b>Liệt kê sản phẩm</b></p>
-<table class="table table-hover table-dark" style="width: 100%;" border="1" style="border-collapse: collapse;">
+<p style="font-size: 20px;margin-top:15px;"><b>Liệt kê sản phẩm</b></p>
+<table style="text-align:center" class="table table-hover table-dark" style="width: 100%;" border="1" style="border-collapse: collapse;">
     <tr>
         <th>ID</th>
         <th>ID_NH</th>
@@ -17,7 +17,6 @@
         <th>Giá bán</th>
         <th>Số lượng</th>
         <th>Giảm giá</th>
-        <th>Tóm tắt</th>
         <th>Nội dung</th>
         <th>Trạng thái</th>
         <th>Quản lý</th>
@@ -35,12 +34,21 @@
         <td><img src="modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>" width="150px"></td>
         <td><?php echo $row['tennhacungcap'] ?></td>
         <td><?php echo $row['tendanhmuc'] ?></td>
-        <td><?php echo number_format($row['gianhap'],0,',','.').'vnđ' ?></td>
-        <td><?php echo number_format($row['giasp'],0,',','.').'vnđ' ?></td>
+        <td><?php echo number_format($row['gianhap'],0,',','.').'đ' ?></td>
+        <td><?php echo number_format($row['giasp'],0,',','.').'đ' ?></td>
+        <?php
+          if($row['soluong']>0){
+        ?>
         <td><?php echo $row['soluong'] ?></td>
+        <?php
+          }else{
+        ?>
+        <td>Hết hàng</td>
+        <?php
+          }
+        ?>
         <td><?php echo $row['sale'].'%' ?></td>
-        <td><?php echo $row['tomtat'] ?></td>
-        <td><?php echo $row['noidung'] ?></td>
+        <td style="text-align:justify"><?php echo $row['noidung'] ?></td>
         <td><?php if($row['tinhtrang']==1) {
         echo 'Kích hoạt';
       }else{

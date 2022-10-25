@@ -1,4 +1,4 @@
-<p style="font-size: 20px;"><b>Thêm danh mục sản phẩm</b></p>
+<p style="font-size: 20px;margin-top:15px;"><b>Thêm danh mục</b></p>
 <table class="table table-hover table-dark" border="1px" style="width: 50%;" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlydanhmucsp/xuly.php">
         <tr>

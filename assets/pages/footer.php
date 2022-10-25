@@ -170,7 +170,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="cta-text">
                                 <h4>Find us</h4>
-                                <span>35/37 Ngo Thi Nham, An Cu Ward, Ninh Kieu District, Can Tho City</span>
+                                <span>35/37 Ngo Thi Nham, An Khanh Ward, Ninh Kieu District, Can Tho City</span>
                             </div>
                         </div>
                     </div>

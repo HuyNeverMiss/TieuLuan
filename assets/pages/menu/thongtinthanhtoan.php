@@ -1,7 +1,7 @@
 <p class="content">Hình thức thanh toán</p>
 <div class="container1">
     <!-- Responsive Arrow Progress Bar -->
-    <div class="arrow-steps clearfix">
+    <div style="font-weight: 600;" class="arrow-steps clearfix">
         <div class="step"> <span> <a href="index.php?quanly=giohang#main_list">Giỏ hàng</a></span> </div>
         <div class="step"> <span><a href="index.php?quanly=vanchuyen#main_list">Vận chuyển</a></span> </div>
         <div class="step current"> <span><a href="index.php?quanly=thongtinthanhtoan#main_list">Thông tin thanh
@@ -28,14 +28,14 @@
                 
             ?>
         <div class="col-md-8">
-            <h4>Thông tin vận chuyển và giỏ hàng</h4>
+            <h4 style="font-weight: 600;">Thông tin vận chuyển và giỏ hàng</h4>
             <ul>
                 <li style="margin: 8px;">Họ và tên : <b><?php echo $name ?></b></li>
                 <li style="margin: 8px;">Số điện thoại : <b><?php echo $phone ?></b></li>
                 <li style="margin: 8px;">Địa chỉ : <b><?php echo $address ?></b></li>
                 <li style="margin: 8px;">Ghi chú : <b><?php echo $note ?></b></li>
             </ul>
-            <table class="table table-hover table-dark" style="width:100%;text-align: center;border-collapse: collapse;" border="5">
+            <table class="table table-hover table-dark" style="width:100%;text-align: center;border-collapse: collapse;font-weight:600;" border="5">
     <tr>
         <th>Id</th>
         <th>Mã sp</th>
@@ -72,7 +72,7 @@
   ?>
     <tr>
         <td colspan="8">
-            <p style="float: left;"><b>Tổng tiền: </b><?php echo number_format($tongtien,0,',','.').'vnđ' ?></p><br />
+            <p style="float: left;color:lightgreen;"><b>Tổng tiền: </b><?php echo number_format($tongtien,0,',','.').'vnđ' ?></p><br />
             <div style="clear: both;"></div>
         </td>
     </tr>
@@ -95,7 +95,7 @@
                  margin: 11px;
 }
         </style>
-        <div class="col-md-4 hinhthucthanhtoan">
+        <div style="font-weight: 600;" class="col-md-4 hinhthucthanhtoan">
             <h4>Phương thức thanh toán</h4>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="thanhtoan" id="exampleRadios1" value="Cash" checked>
@@ -109,13 +109,6 @@
             <i class="ti-credit-card"></i> Chuyển khoản 
             </label>
         </div>
-        <!-- <div class="form-check">
-            <input class="form-check-input" type="radio" name="thanhtoan" id="exampleRadios3" value="momo" checked>
-            <img class="form_check">
-            <label class="form-check-label" for="exampleRadios3">
-                MOMO
-            </label>
-        </div> -->
         <div class="form-check">
             <input class="form-check-input" type="radio" name="thanhtoan" id="exampleRadios4" value="VNPay" checked>
             <img class="form_check1">
@@ -124,7 +117,7 @@
             </label>
         </div>
         <?php
-            if(!isset($_SESSION['cart'])){
+            if(!isset($_SESSION['cart']) || $tongtien==0){
         ?>
         <input disabled type="submit" value="Thanh toán ngây" name="redirect" class="btn btn-danger">
         <?php
@@ -137,7 +130,7 @@
 </form>
 <p></p>
  <?php
-            if(!isset($_SESSION['cart'])){
+            if(!isset($_SESSION['cart']) || $tongtien==0){
         ?>
 <form class="row" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="assets/pages/menu/xulythanhtoanmomo.php">
     <input disabled type="hidden" value="<?php echo $tongtien?>" name="tongtien">
@@ -149,6 +142,9 @@
     <input disabled type="submit" name="Momo" value="Thanh toán MOMO ATM" class="btn btn-primary">
 </form>
 <?php
+    echo "<script>alert('Vui lòng thêm sản phẩm vào giỏ hàng')
+    window.location.replace('index.php?quanly=giohang#main_list');
+    </script>";
             }else{
 ?>
 <form class="row" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="assets/pages/menu/xulythanhtoanmomo.php">
