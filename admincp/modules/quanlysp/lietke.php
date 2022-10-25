@@ -17,7 +17,6 @@
         <th>Giá bán</th>
         <th>Số lượng</th>
         <th>Giảm giá</th>
-        <th>Nội dung</th>
         <th>Trạng thái</th>
         <th>Quản lý</th>
     </tr>
@@ -48,7 +47,7 @@
           }
         ?>
         <td><?php echo $row['sale'].'%' ?></td>
-        <td style="text-align:justify"><?php echo $row['noidung'] ?></td>
+        <!-- <td style="text-align:justify"><?php echo $row['tomtat'] ?></td> -->
         <td><?php if($row['tinhtrang']==1) {
         echo 'Kích hoạt';
       }else{

@@ -17,9 +17,9 @@
         ?>
         <a href="index.php?quanly=sanpham&id=<?php echo $row_pro['id_sanpham'] ?>#main_list">
             <img src="admincp/modules/quanlysp/uploads/<?php echo $row_pro['hinhanh'] ?>">
-            <p class="title_product">Tên sản phẩm : <?php echo $row_pro['tensanpham'] ?></p>
-            <p style="text-align: center; color: white;font-size: 14px;font-weight: bold;padding: 0px 61px;border-radius: 15px;background-color: red;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row_pro['giasp'],0,',','.').'đ' ?></p>
-            <p class="price_product">###</p>
+            <p class="title_product"><?php echo $row_pro['tensanpham'] ?></p>
+            <p style="text-align: center; color: #c48c46;font-size: 17px;font-weight: 700;padding: 0px 61px;border-radius: 15px;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row_pro['giasp'],0,',','.').'đ' ?></p>
+            <p class="price_product" style="color: #d1d1d1;">###</p>
             <p style="text-align: center;color:#d1d1d1"><?php echo $row_title['tendanhmuc'] ?></p>
         </a>
         <?php
@@ -27,8 +27,8 @@
         ?>
         <a href="index.php?quanly=sanpham&id=<?php echo $row_pro['id_sanpham'] ?>#main_list">
             <img src="admincp/modules/quanlysp/uploads/<?php echo $row_pro['hinhanh'] ?>">
-            <p class="title_product">Tên sản phẩm : <?php echo $row_pro['tensanpham'] ?></p>
-            <p style="text-align: center; color: white;font-size: 14px;font-weight: bold;padding: 0px 61px;border-radius: 15px;background-color: red;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row_pro['giasp']-($row_pro['giasp']*$row_pro['sale']/100),0,',','.').'đ' ?></p>
+            <p class="title_product"><?php echo $row_pro['tensanpham'] ?></p>
+            <p style="text-align: center; color: #c48c46;font-size: 17px;font-weight: 700;padding: 0px 61px;border-radius: 15px;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row_pro['giasp']-($row_pro['giasp']*$row_pro['sale']/100),0,',','.').'đ' ?></p>
             <p style="text-decoration-line:line-through;" class="price_product"><?php echo number_format($row_pro['giasp'],0,',','.').'đ'?></p>
             <p style="text-align: center;color:#d1d1d1"><?php echo $row_title['tendanhmuc'] ?></p>
         </a>

@@ -87,8 +87,9 @@
         <td> 
             <a href="assets/pages/menu/themgiohang.php?cong=<?php echo $cart_item['id'] ?>#main_list"><i
                     class="fa fa-plus fa-style" aria-hidden="true"></i></a>
-            <form>
-              <input type="text" name="soluong" value="<?php echo $cart_item['soluong']; ?>">
+            <form action="" method="POST">
+              <input type="number" name="soluong">
+              <input type="submit" value="Update cart" name="update" class="btn btn-primary">
             </form>
             <a href="assets/pages/menu/themgiohang.php?tru=<?php echo $cart_item['id'] ?>#main_list"><i
                     class="fa fa-minus fa-style" aria-hidden="true"></i></a>

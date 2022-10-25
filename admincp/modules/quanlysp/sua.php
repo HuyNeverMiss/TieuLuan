@@ -105,7 +105,7 @@
         $sql_tenhang = "SELECT * FROM tbl_nhaphang ORDER BY id_nhaphang DESC";
         $query_tenhang = mysqli_query($mysqli,$sql_tenhang);
         while ($row_tenhang = mysqli_fetch_array($query_tenhang)){
-          if($row_tenhang['id_nhaphang']==$row['id']){
+          if($row_tenhang['id_nhaphang']==$row['id_nh']){
         ?>
                     <option selected value="<?php echo $row_tenhang['id_nhaphang']?>">
                         <?php echo $row_tenhang['tensanpham']?></option>

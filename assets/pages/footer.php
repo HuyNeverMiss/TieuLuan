@@ -188,7 +188,7 @@
                             <i class="far fa-envelope-open"></i>
                             <div class="cta-text">
                                 <h4>Mail us</h4>
-                                <span>Sneakershop@gmail.com</span>
+                                <span>GEMSTONEsshop@gmail.com</span>
                             </div>
                         </div>
                     </div>
@@ -199,7 +199,7 @@
                     <div class="col-xl-4 col-lg-4 mb-50">
                         <div class="footer-widget">
                             <div class="footer-logo">
-                                <a href="#main_list"><img style="border-radius: 50%;" src="https://www.logolynx.com/images/logolynx/52/528493dd6794e993278baf46c6c8e775.jpeg" class="img-fluid" alt="logo"></a>
+                                <a href="#main_list"><img style="border-radius: 50%;" src="https://cdn1.iconfinder.com/data/icons/web-65/48/78-512.png" class="img-fluid" alt="logo"></a>
                             </div>
                             <div class="footer-text">
                                 <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing

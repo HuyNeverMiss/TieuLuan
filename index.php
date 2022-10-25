@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNEAKERSHOP</title>
+    <title>GEMSTONEs</title>
     <link rel="icon"
-        href="https://www.logolynx.com/images/logolynx/52/528493dd6794e993278baf46c6c8e775.jpeg"
+        href="https://cdn1.iconfinder.com/data/icons/web-65/48/78-512.png"
         type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">

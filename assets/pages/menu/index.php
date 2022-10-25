@@ -25,9 +25,9 @@
         ?>
         <a href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>#main_list">
             <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>">
-            <p class="title_product">Tên sản phẩm : <?php echo $row['tensanpham'] ?></p>
-            <p style="text-align: center; color: white;font-size: 14px;font-weight: bold;padding: 0px 61px;border-radius: 15px;background-color: red;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'đ'?></p>
-            <p class="price_product">###</p>
+            <p class="title_product"><?php echo $row['tensanpham'] ?></p>
+            <p style="text-align: center; color: #c48c46;font-size: 17px;font-weight: 700;padding: 0px 61px;border-radius: 15px;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'đ'?></p>
+            <p class="price_product" style="color: #d1d1d1;">###</p>
             <p style="text-align: center;color:#d1d1d1"><?php echo $row['tendanhmuc'] ?></p>
         </a>
         <?php
@@ -35,9 +35,9 @@
         ?>
         <a href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>#main_list">
             <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>">
-            <p class="title_product">Tên sản phẩm : <?php echo $row['tensanpham'] ?></p>
-            <p style="text-align: center; color: white;font-size: 14px;font-weight: bold;padding: 0px 61px;border-radius: 15px;background-color: red;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp']-($row['giasp']*$row['sale']/100),0,',','.').'đ' ?></p>
-            <p style="text-decoration-line:line-through" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'đ'?></p>
+            <p class="title_product"><?php echo $row['tensanpham'] ?></p>
+            <p style="text-align: center; color: #c48c46;font-size: 17px;font-weight: 700;padding: 0px 61px;border-radius: 15px;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp']-($row['giasp']*$row['sale']/100),0,',','.').'đ' ?></p>
+            <p style="text-decoration-line:line-through;color:#d1d1d1" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'đ'?></p>
             <p style="text-align: center;color:#d1d1d1"><?php echo $row['tendanhmuc'] ?></p>
         </a>
         <?php
@@ -125,8 +125,8 @@ $trang = ceil($row_count/10);
         ?>
         <a href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>#main_list">
             <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>">
-            <p class="title_product">Tên sản phẩm : <?php echo $row['tensanpham'] ?></p>
-            <p style="text-align: center; color: white;font-size: 14px;font-weight: bold;padding: 0px 61px;border-radius: 15px;background-color: red;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'vnđ'?></p>
+            <p class="title_product"><?php echo $row['tensanpham'] ?></p>
+            <p style="text-align: center; color: #c48c46;font-size: 17px;font-weight: 700;padding: 0px 61px;border-radius: 15px;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'vnđ'?></p>
             <p class="price_product">###</p>
             <p style="text-align: center;color:#d1d1d1"><?php echo $row['tendanhmuc'] ?></p>
         </a>
@@ -135,9 +135,9 @@ $trang = ceil($row_count/10);
         ?>
         <a href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>#main_list">
             <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>">
-            <p class="title_product">Tên sản phẩm : <?php echo $row['tensanpham'] ?></p>
-            <p style="text-align: center; color: white;font-size: 14px;font-weight: bold;padding: 0px 61px;border-radius: 15px;background-color: red;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp']-($row['giasp']*$row['sale']/100),0,',','.').'vnđ' ?></p>
-            <p style="text-decoration-line:line-through" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'vnđ'?></p>
+            <p class="title_product"><?php echo $row['tensanpham'] ?></p>
+            <p style="text-align: center; color: #c48c46;font-size: 17px;font-weight: 700;padding: 0px 61px;border-radius: 15px;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp']-($row['giasp']*$row['sale']/100),0,',','.').'vnđ' ?></p>
+            <p style="text-decoration-line:line-through;color:#d1d1d1" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'vnđ'?></p>
             <p style="text-align: center;color:#d1d1d1"><?php echo $row['tendanhmuc'] ?></p>
         </a>
         <?php

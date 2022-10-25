@@ -55,7 +55,7 @@
                 <?php echo $row_chitiet['noidung'] ?>
             </div>
             <div id="tab3" class="tab-content" style="font-weight: 600;">
-            <div class="comment">
+            <!-- <div class="comment">
             <form method="post" action="">
                     <p style="width:98.8%; height:40px; background-color:rgb(235, 231, 231); text-align:center;font-size:30px;font-weight:700;line-height:40px;margin: 20px 10px;">Bình Luận</p>
                 <textarea name="comment" id="" cols="150" rows="3" placeholder="Bình luận tối thiểu phải 10 ký tự"></textarea>
@@ -107,7 +107,7 @@
                     ?>
                 </ul>
             </div>
-        </div>
+        </div> -->
             <script> 
             function getValue(){
                 var valueBtn = document.querySelector('textarea').value;
@@ -146,8 +146,8 @@
         <a href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>#main_list">
             <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>">
             <p class="title_product">Tên sản phẩm : <?php echo $row['tensanpham'] ?></p>
-            <p style="text-align: center; color: white;font-size: 14px;font-weight: bold;padding: 0px 61px;border-radius: 15px;background-color: red;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'vnđ'?></p>
-            <p class="price_product">###</p>
+            <p style="text-align: center; color:  #c48c46;font-size: 17px;font-weight: bold;padding: 0px 61px;border-radius: 15px;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'vnđ'?></p>
+            <p class="price_product" style="color: #d1d1d1;">###</p>
             <p style="text-align: center;color:#d1d1d1"><?php echo $row['tendanhmuc'] ?></p>
         </a>
         <?php
@@ -156,8 +156,8 @@
         <a href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>#main_list">
             <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>">
             <p class="title_product">Tên sản phẩm : <?php echo $row['tensanpham'] ?></p>
-            <p style="text-align: center; color: white;font-size: 14px;font-weight: bold;padding: 0px 61px;border-radius: 15px;background-color: red;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp']-($row['giasp']*$row['sale']/100),0,',','.').'vnđ' ?></p>
-            <p style="text-decoration-line:line-through" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'vnđ'?></p>
+            <p style="text-align: center; color:  #c48c46;font-size: 17px;font-weight: bold;padding: 0px 61px;border-radius: 15px;transition: all 0.2s linear;" class="price_product"><?php echo number_format($row['giasp']-($row['giasp']*$row['sale']/100),0,',','.').'vnđ' ?></p>
+            <p style="text-decoration-line:line-through;color:#d1d1d1;" class="price_product"><?php echo number_format($row['giasp'],0,',','.').'vnđ'?></p>
             <p style="text-align: center;color:#d1d1d1"><?php echo $row['tendanhmuc'] ?></p>
         </a>
         <?php
