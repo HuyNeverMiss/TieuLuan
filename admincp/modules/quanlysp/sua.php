@@ -80,7 +80,7 @@
         $sql_nhacungcap = "SELECT * FROM tbl_nhacungcap ORDER BY id DESC";
         $query_nhacungcap = mysqli_query($mysqli,$sql_nhacungcap);
         while ($row_nhacungcap = mysqli_fetch_array($query_nhacungcap)){
-          if($row_nhacungcap['id']==$row['id']){
+          if($row_nhacungcap['id']==$row['id_ncc']){
         ?>
                     <option selected value="<?php echo $row_nhacungcap['id']?>">
                         <?php echo $row_nhacungcap['tennhacungcap']?></option>

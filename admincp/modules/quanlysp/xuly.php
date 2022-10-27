@@ -18,7 +18,7 @@
     $tenhang = $_POST['tenhang'];
     if(isset($_POST['themsanpham'])){
         //them
-        $sql_them = "INSERT INTO tbl_sanpham(tensanpham,masp,gianhap,giasp,soluong,hinhanh,tomtat,noidung,sale,tinhtrang,id_danhmuc,id,id_nh) 
+        $sql_them = "INSERT INTO tbl_sanpham(tensanpham,masp,gianhap,giasp,soluong,hinhanh,tomtat,noidung,sale,tinhtrang,id_danhmuc,id_ncc,id_nh) 
         VALUE('".$tensanpham."','".$masp."','".$gianhap."','".$giasp."','".$soluong."','".$hinhanh."','".$tomtat."','".$noidung."','".$sale."','".$tinhtrang."','".$danhmuc."','".$nhacungcap."','".$tenhang."')";
         mysqli_query($mysqli,$sql_them);
         move_uploaded_file($hinhanh_tmp,'uploads/'.$hinhanh);
@@ -28,7 +28,7 @@
         if(!empty($_FILES['hinhanh']['name'])){
             move_uploaded_file($hinhanh_tmp,'uploads/'.$hinhanh);
             $sql_update = "UPDATE tbl_sanpham SET tensanpham='".$tensanpham."', masp='".$masp."', gianhap='".$gianhap."', giasp='".$giasp."', soluong='".$soluong."', 
-            hinhanh='".$hinhanh."', tomtat='".$tomtat."', noidung='".$noidung."',sale='".$sale."',tinhtrang='".$tinhtrang."',id_danhmuc='".$danhmuc."',id ='".$nhacungcap."',id_nh ='".$tenhang."' WHERE id_sanpham='$_GET[idsanpham]'";
+            hinhanh='".$hinhanh."', tomtat='".$tomtat."', noidung='".$noidung."',sale='".$sale."',tinhtrang='".$tinhtrang."',id_danhmuc='".$danhmuc."',id_ncc ='".$nhacungcap."',id_nh ='".$tenhang."' WHERE id_sanpham='$_GET[idsanpham]'";
             //xoa hinh cũ
             $sql = "SELECT * FROM tbl_sanpham WHERE id_sanpham = '$_GET[idsanpham]' LIMIT 1";
             $query = mysqli_query($mysqli,$sql);
@@ -37,7 +37,7 @@
             }
         }else{
             $sql_update = "UPDATE tbl_sanpham SET tensanpham='".$tensanpham."', masp='".$masp."', gianhap='".$gianhap."', giasp='".$giasp."', soluong='".$soluong."', 
-            tomtat='".$tomtat."', noidung='".$noidung."',sale='".$sale."',tinhtrang='".$tinhtrang."',id_danhmuc='".$danhmuc."',id ='".$nhacungcap."',id_nh ='".$tenhang."' WHERE id_sanpham='$_GET[idsanpham]'";
+            tomtat='".$tomtat."', noidung='".$noidung."',sale='".$sale."',tinhtrang='".$tinhtrang."',id_danhmuc='".$danhmuc."',id_ncc ='".$nhacungcap."',id_nh ='".$tenhang."' WHERE id_sanpham='$_GET[idsanpham]'";
         }
         mysqli_query($mysqli,$sql_update);
         header('Location:../../index.php?action=quanlysp&query=them');

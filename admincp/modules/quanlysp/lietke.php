@@ -1,5 +1,5 @@
 <?php
-    $sql_lietke_sp = "SELECT * FROM tbl_sanpham,tbl_danhmuc,tbl_nhacungcap WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.id =tbl_nhacungcap.id
+    $sql_lietke_sp = "SELECT * FROM tbl_sanpham,tbl_danhmuc,tbl_nhacungcap WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.id_ncc =tbl_nhacungcap.id
     ORDER BY id_sanpham DESC";
     $query_lietke_sp = mysqli_query($mysqli,$sql_lietke_sp);
 ?>

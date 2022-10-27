@@ -36,7 +36,7 @@
         $sql_nhacungcap = "SELECT * FROM tbl_nhacungcap ORDER BY id DESC";
         $query_nhacungcap = mysqli_query($mysqli,$sql_nhacungcap);
         while ($row_nhacungcap = mysqli_fetch_array($query_nhacungcap)){
-          if($row_nhacungcap['id']==$row['id']){
+          if($row_nhacungcap['id']==$row['id_ncc']){
         ?>
                     <option selected value="<?php echo $row_nhacungcap['id']?>">
                         <?php echo $row_nhacungcap['tennhacungcap']?></option>
@@ -45,6 +45,30 @@
         ?>
                     <option value="<?php echo $row_nhacungcap['id']?>">
                         <?php echo $row_nhacungcap['tennhacungcap']?>
+                    </option>
+                    <?php
+          }
+        }  
+        ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Danh mục sản phẩm</td>
+            <td>
+                <select name="danhmuc">
+                    <?php
+        $sql_danhmuc = "SELECT *FROM tbl_danhmuc ORDER BY id_danhmuc DESC";
+        $query_danhmuc = mysqli_query($mysqli,$sql_danhmuc);
+        while ($row_danhmuc = mysqli_fetch_array($query_danhmuc)){
+          if($row_danhmuc['id_danhmuc']==$row['id_danhmuc']){
+        ?>
+                    <option selected value="<?php echo $row_danhmuc['id_danhmuc']?>">
+                        <?php echo $row_danhmuc['tendanhmuc']?></option>
+                    <?php
+        }else{
+        ?>
+                    <option value="<?php echo $row_danhmuc['id_danhmuc']?>"><?php echo $row_danhmuc['tendanhmuc']?>
                     </option>
                     <?php
           }

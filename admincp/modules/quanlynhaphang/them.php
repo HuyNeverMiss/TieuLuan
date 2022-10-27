@@ -22,11 +22,28 @@
             <td>
                 <select name="nhacungcap">
                     <?php
-        $sql_nhacungcap = "SELECT *FROM tbl_nhacungcap ORDER BY id DESC";
+        $sql_nhacungcap = "SELECT * FROM tbl_nhacungcap ORDER BY id DESC";
         $query_nhacungcap = mysqli_query($mysqli,$sql_nhacungcap);
         while ($row_nhacungcap = mysqli_fetch_array($query_nhacungcap)){
         ?>
                     <option value="<?php echo $row_nhacungcap['id']?>"><?php echo $row_nhacungcap['tennhacungcap']?>
+                    </option>
+                    <?php
+        }
+        ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Danh mục sản phẩm</td>
+            <td>
+                <select name="danhmuc">
+                    <?php
+        $sql_danhmuc = "SELECT *FROM tbl_danhmuc ORDER BY id_danhmuc DESC";
+        $query_danhmuc = mysqli_query($mysqli,$sql_danhmuc);
+        while ($row_danhmuc = mysqli_fetch_array($query_danhmuc)){
+        ?>
+                    <option value="<?php echo $row_danhmuc['id_danhmuc']?>"><?php echo $row_danhmuc['tendanhmuc']?>
                     </option>
                     <?php
         }

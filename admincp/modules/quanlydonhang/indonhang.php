@@ -15,7 +15,7 @@
 	$sql_lietke_dh = "SELECT * FROM tbl_chitietdonhang,tbl_sanpham,tbl_donhang WHERE tbl_chitietdonhang.id_sanpham=tbl_sanpham.id_sanpham 
     AND tbl_chitietdonhang.code_donhang='".$code."' AND tbl_chitietdonhang.code_donhang=tbl_donhang.code_donhang ORDER BY tbl_chitietdonhang.id_chitietdonhang DESC";
 	$query_lietke_dh = mysqli_query($mysqli,$sql_lietke_dh);
-	$sql_khachhang = "SELECT * FROM tbl_donhang,tbl_khachhang,tbl_chitietdonhang WHERE tbl_donhang.id_khachhang=tbl_khachhang.id_khachhang AND tbl_chitietdonhang.code_donhang=tbl_donhang.code_donhang AND tbl_chitietdonhang.code_donhang='".$code."' LIMIT 1";
+	$sql_khachhang = "SELECT * FROM tbl_donhang,tbl_khachhang,tbl_chitietdonhang,tbl_vanchuyen WHERE tbl_donhang.id_khachhang=tbl_khachhang.id_khachhang AND tbl_chitietdonhang.code_donhang=tbl_donhang.code_donhang AND tbl_chitietdonhang.code_donhang='".$code."' AND tbl_khachhang.id_khachhang=tbl_vanchuyen.id_dangky LIMIT 1";
 	$query_khachhang = mysqli_query($mysqli,$sql_khachhang);
 
 	$pdf->Write(10,'                                                                                 SNEAKER SHOP                                              ');
@@ -31,16 +31,16 @@
 		$i++;
 	$pdf->Cell(59 ,7,'',0,1);
 	$pdf->Write(5,'Tên khách hàng:  ');
-	$pdf->Cell(130,5,$row1['tenkhachhang'],0,0);
+	$pdf->Cell(130,5,$row1['name'],0,0);
 	$pdf->Cell(59 ,8,'',0,1);
 	$pdf->Write(5,'Địa chỉ:  ');
-	$pdf->Cell(130,5,$row1['diachi'],0,0);
+	$pdf->Cell(130,5,$row1['address'],0,0);
 	$pdf->Cell(59 ,8,'',0,1);
 	$pdf->Write(5,'Email:  ');
 	$pdf->Cell(130,5,$row1['email'],0,0);
 	$pdf->Cell(59 ,8,'',0,1);
 	$pdf->Write(5,'Số điện thoại:  ');
-	$pdf->Cell(130,5,'0'.number_format($row1['dienthoai'],0,',','.'),0,1);
+	$pdf->Cell(130,5,'0'.number_format($row1['phone'],0,',','.'),0,1);
 	$pdf->Cell(59 ,5,'',0,1);
 	}
     $pdf->Write(10,'****************************************************** ĐƠN HÀNG *************************************************');

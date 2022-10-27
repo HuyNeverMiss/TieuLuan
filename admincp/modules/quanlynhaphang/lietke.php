@@ -1,6 +1,5 @@
 <?php
-    $sql_lietke_sp = "SELECT * FROM tbl_nhaphang,tbl_nhacungcap WHERE tbl_nhaphang.id =tbl_nhacungcap.id
-    ORDER BY id_nhaphang DESC";
+    $sql_lietke_sp = "SELECT * FROM tbl_nhaphang,tbl_nhacungcap,tbl_danhmuc WHERE tbl_nhaphang.id_ncc =tbl_nhacungcap.id AND tbl_nhaphang.id_danhmuc =tbl_danhmuc.id_danhmuc ORDER BY id_nhaphang DESC";
     $query_lietke_sp = mysqli_query($mysqli,$sql_lietke_sp);
 ?>
 
@@ -11,6 +10,7 @@
         <th>Tên sản phẩm</th>
         <th>Hình ảnh</th>
         <th>Nhà cung cấp</th>
+        <th>Danh mục</th>
         <th>Giá nhập</th>
         <th>Số lượng</th>
         <th>Số lượng đã bán</th>
@@ -28,6 +28,7 @@
         <td><?php echo $row['tensanpham'] ?></td>
         <td><img src="modules/quanlynhaphang/uploads/<?php echo $row['hinhanh'] ?>" width="150px"></td>
         <td><?php echo $row['tennhacungcap'] ?></td>
+        <td><?php echo $row['tendanhmuc'] ?></td>
         <td><?php echo number_format($row['gianhap'],0,',','.').'đ' ?></td>
         <td><?php echo $row['soluong1'] ?></td>
         <td><?php echo $row['soluongdaban'] ?></td>
@@ -42,6 +43,7 @@
                 style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;"><i class="ti-trash"></i></a>
             <a href="?action=quanlynhaphang&query=sua&idnhaphang=<?php echo $row['id_nhaphang'] ?>"
                 style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;"><i class="ti-pencil"></i></a>
+            <a style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;" href="modules/quanlynhaphang/innhaphang.php"><i class="ti-printer"></i></a>
         </td>
     </tr>
     <?php
