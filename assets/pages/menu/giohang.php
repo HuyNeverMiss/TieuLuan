@@ -1,4 +1,4 @@
-<p class="content">SNEAKERSHOP
+<p class="content">GEMSTONEs
     <?php
   if(isset($_SESSION['dangky'])){
     echo 'xin chào: '.'<span style="color:red">'.$_SESSION['dangky'].'</span>'; 
@@ -25,7 +25,7 @@
                                 <th><?php echo $row['tenkhachhang']?></th>
                                 <th><?php echo $row['email']?></th>
                                 <th><?php echo $row['diachi']?></th>
-                                <th><?php echo $row['dienthoai']?></th>
+                                <th><?php echo '0'.$row['dienthoai']?></th>
                         </tr>
                        <?php
         }
@@ -57,7 +57,7 @@
 <?php
   }
 ?>
-
+<form action="" method="POST">
 <table class="table table-hover table-dark" style="width:100%;text-align: center;border-collapse: collapse;font-weight:600;" border="5">
     <tr>
         <th>Id</th>
@@ -75,6 +75,16 @@
   	$i = 0;
   	$tongtien = 0;
   	foreach($_SESSION['cart'] as $cart_item){
+      // if(isset($_POST['capnhatsoluong'])){
+      //   for($i=0;$i<count($_POST['product_id']);$i++){  
+      //       $product_id = $_POST['product_id'][$i];
+      //       $soluong = $_POST['soluong'][$i];
+      //       if($cart_item['id']==$product_id){
+      //         $cart_item['soluong'] = $soluong;
+      //       }
+      //   }
+      // }
+      // print_r($cart_item['soluong']);
   		$thanhtien = $cart_item['soluong']*($cart_item['giasp']-$cart_item['giasp']*$cart_item['sale']/100);
   		$tongtien+=$thanhtien;
   		$i++;
@@ -86,8 +96,9 @@
         <td><img style="border-radius: 30%;" src="admincp/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh']; ?>" width="150px"></td>
         <td> 
             <a href="assets/pages/menu/themgiohang.php?cong=<?php echo $cart_item['id'] ?>#main_list"><i
-                    class="fa fa-plus fa-style" aria-hidden="true"></i></a>
-                    <?php echo $cart_item['soluong']?>
+                    class="fa fa-plus fa-style" aria-hidden="true"></i></a>   
+            <input style="width: 40px;text-align:center;" type="number" min="1" name="soluong[]" value="<?php echo $cart_item['soluong']?>">        
+            <input type="hidden" name="product_id[]" value="<?php echo $cart_item['id']?>">        
             <a href="assets/pages/menu/themgiohang.php?tru=<?php echo $cart_item['id'] ?>#main_list"><i
                     class="fa fa-minus fa-style" aria-hidden="true"></i></a>
         </td>
@@ -108,6 +119,7 @@
         if(isset($_SESSION['dangky'])){
           ?>
             <p><a href="index.php?quanly=vanchuyen#main_list"><b><i class="ti-truck"></i> Hình thức vận chuyển</b></a></p>
+            <!-- <input type="submit" class="btn btn-success" value="Cập nhật giỏ hàng" name="capnhatsoluong"> -->
             <?php
         }else{
       ?>
@@ -131,3 +143,4 @@
   ?>
 
 </table>
+</form>

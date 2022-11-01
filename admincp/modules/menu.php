@@ -11,6 +11,7 @@
         <li><a href="index.php?action=quanlynhacungcap&query=them"><b>Nhà cung cấp</b></a></li>
         <li><a href="index.php?action=quanlynhaphang&query=them"><b>Nhập hàng</b></a></li>
         <li><a href="index.php?action=quanlysp&query=them"><b>Sản phẩm</b></a></li>
+        <li><a href="index.php?action=quanlythanhvien&query=them"><b>Thành viên</b></a></li>
         <li>
         <a>
             More

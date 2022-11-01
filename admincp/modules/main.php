@@ -49,6 +49,13 @@
             }elseif($tam == 'quanlynhaphang' && $query=='sua'){
                 include("./modules/quanlynhaphang/sua.php");
             
+            }elseif($tam == 'quanlythanhvien' && $query=='them'){
+                include("./modules/quanlythanhvien/them.php");
+                include("./modules/quanlythanhvien/lietke.php");
+            
+            }elseif($tam == 'quanlythanhvien' && $query=='sua'){
+                include("./modules/quanlythanhvien/sua.php");
+            
             }else{
                 include("./modules/dashboard.php");
             }

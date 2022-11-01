@@ -35,7 +35,7 @@
 		$i++;
 	$pdf->Cell(59 ,7,'',0,1);
     $pdf->Write(5,'Date:  ');
-	$pdf->Cell(130,5,$row1['ngaynhap'],0,0);
+	$pdf->Cell(130,5,$now,0,0);
 	$pdf->Cell(59 ,8,'',0,1);
 	$pdf->Write(5,'Nhân viên:  ');
 	$pdf->Cell(130,5,$row1['username'],0,0);

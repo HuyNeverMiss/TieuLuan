@@ -9,7 +9,6 @@
         <th>Tên tin tức</th>
         <th>Hình ảnh</th>
         <th>Tóm tắt</th>
-        <th>Nội dung</th>
         <th>Tình trạng</th>
         <th>Quản lý</th>
     </tr>
@@ -23,7 +22,6 @@
         <td style="text-align:justify"><?php echo $row['tentintuc'] ?></td>
         <td><img src="modules/quanlytintuc/uploads/<?php echo $row['hinhanh'] ?>" width="150px"></td>
         <td style="text-align:justify"><?php echo $row['tomtat'] ?></td>
-        <td style="text-align:justify"><?php echo $row['noidung'] ?></td>
         <td><?php if($row['tinhtrang']==1){
         echo 'Kích hoạt';
       }else{
