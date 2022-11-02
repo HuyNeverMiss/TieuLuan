@@ -43,16 +43,16 @@
 	$pdf->Cell(130,5,'0'.number_format($row1['phone'],0,',','.'),0,1);
 	$pdf->Cell(59 ,5,'',0,1);
 	}
-    $pdf->Write(10,'****************************************************** ĐƠN HÀNG *************************************************');
+    $pdf->Write(10,'****************************************************** ĐƠN HÀNG ******************************************************');
 	$pdf->Ln(15);
 
-	$width_cell=array(10,35,50,20,50,25,50);
+	$width_cell=array(10,35,50,25,50,50,50);
 
 	$pdf->Cell($width_cell[0],10,'ID',1,0,'C',true);
 	$pdf->Cell($width_cell[1],10,'Mã đơn hàng',1,0,'C',true);
 	$pdf->Cell($width_cell[2],10,'Tên sản phẩm',1,0,'C',true);
 	$pdf->Cell($width_cell[3],10,'Số lượng',1,0,'C',true); 
-	$pdf->Cell($width_cell[4],10,'Đơn giá',1,0,'C',true);
+	$pdf->Cell($width_cell[4],10,'Giá sản phẩm',1,0,'C',true);
 	$pdf->Cell($width_cell[5],10,'Giảm giá',1,0,'C',true);
 	$pdf->Cell($width_cell[6],10,'Thành tiền',1,1,'C',true); 
 	$fill=false;
@@ -65,12 +65,12 @@
 	$pdf->Cell($width_cell[1],10,$row['code_donhang'],1,0,'C',$fill);
 	$pdf->Cell($width_cell[2],10,$row['tensanpham'],1,0,'C',$fill);
 	$pdf->Cell($width_cell[3],10,$row['SoLuong'],1,0,'C',$fill);
-	$pdf->Cell($width_cell[4],10,number_format($row['SoLuong']*$row['giasp'],0,',','.').'đ',1,0,'C',$fill);
-	$pdf->Cell($width_cell[5],10,number_format($row['sale']).'%',1,0,'C',$fill);
+	$pdf->Cell($width_cell[4],10,number_format($row['giasp'],0,',','.').'đ',1,0,'C',$fill);
+	$pdf->Cell($width_cell[5],10,number_format(($row['giasp']-($row['giasp']*$row['sale']/100)),0,',','.').'đ'.' ('.$row['sale'].'%)',1,0,'C',$fill);
 	$pdf->Cell($width_cell[6],10,number_format($row['SoLuong']*($row['giasp']-($row['giasp']*$row['sale']/100)),0,',','.').'đ',1,1,'C',$fill);
 	}
 	$pdf->Cell(59 ,5,'',0,1);
-	$pdf->Write(10,'                                                                                                                            Tổng hóa đơn:  ');
+	$pdf->Write(10,'                                                                                                                                                   Tổng hóa đơn:  ');
 	$pdf->Write(10,number_format($tongtien,0,',','.').'đ');
 	$pdf->Cell(59 ,8,'',0,1);
 	$pdf->Write(15,'                                                           Cảm ơn bạn đã mua hàng tại SNEAKER SHOP.');

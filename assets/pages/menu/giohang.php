@@ -103,7 +103,7 @@
                     class="fa fa-minus fa-style" aria-hidden="true"></i></a>
         </td>
         <td><?php echo number_format($cart_item['giasp'],0,',','.').'đ'; ?></td>
-        <td><?php echo number_format($cart_item['sale']).'%' ?></td>
+        <td><?php echo number_format($cart_item['sale']).'%' ?> (Còn: <?php echo number_format($cart_item['giasp']-$cart_item['giasp']*$cart_item['sale']/100,0,',','.').'đ'?>)</td>
         <td><?php echo number_format($thanhtien,0,',','.').'đ' ?></td>
         <td><a href="assets/pages/menu/themgiohang.php?xoa=<?php echo $cart_item['id'] ?>#main_list"><i class="ti-close"></i></a></td>
     </tr>

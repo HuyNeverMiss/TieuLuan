@@ -60,7 +60,7 @@
         <td><?php echo $row['tensanpham'] ?></td>
         <td><?php echo $row['SoLuong'] ?></td>
         <td><?php echo number_format($row['giasp'],0,',','.').'đ' ?></td>
-        <td><?php echo number_format($row['sale']).'%'?></td>
+        <td><?php echo number_format($row['sale']).'%'?> (Còn: <?php echo number_format($row['giasp']-$row['giasp']*$row['sale']/100,0,',','.').'đ'?>)</td>
         <td><?php echo number_format($thanhtien,0,',','.').'đ' ?></td>
     </tr>
     <?php

@@ -150,6 +150,7 @@ p.content {
   font-size: 28px;
   font-weight: 700;
   /* transition: all 0.2s linear; */
+  margin-top: 14px;
 }
 
 p.content1 {

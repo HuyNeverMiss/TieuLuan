@@ -23,13 +23,14 @@
             echo '<script>alert("Vui lòng nhập bình luận!")</script>';
         }
     }
-    $sql_rating = "SELECT * FROM tbl_danhgia  WHERE tbl_danhgia.id_sanpham=$_GET[id] ORDER BY tbl_danhgia.id_danhgia DESC";
+    $sql_rating = "SELECT AVG(star) FROM tbl_danhgia  WHERE tbl_danhgia.id_sanpham=$_GET[id] ORDER BY tbl_danhgia.id_danhgia DESC";
     $query_rating = mysqli_query($mysqli,$sql_rating);
-    // while($row_rating = mysqli_fetch_array($query_rating)){
-    //     $rating = count($row_rating['star']);
-    //     echo $rating;
-  
-    // }
+    $row_rating = mysqli_fetch_array($query_rating);
+    
+    $sql_count = "SELECT star FROM tbl_danhgia  WHERE tbl_danhgia.id_sanpham=$_GET[id] ORDER BY tbl_danhgia.id_danhgia DESC";
+    $query_count = mysqli_query($mysqli,$sql_count);
+
+
     $sql_load_cmt = "SELECT * FROM tbl_danhgia,tbl_khachhang,tbl_sanpham WHERE tbl_danhgia.id_sanpham='$_GET[id]' AND tbl_danhgia.id_khachhang=tbl_khachhang.id_khachhang AND tbl_sanpham.id_sanpham=tbl_danhgia.id_sanpham ORDER BY tbl_danhgia.id_danhgia DESC LIMIT $begin,6";
     $query_load_cmt = mysqli_query($mysqli,$sql_load_cmt);
 	$sql_chitiet = "SELECT * FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.id_sanpham='$_GET[id]' LIMIT 1";
@@ -43,9 +44,12 @@
     <form method="POST"
         action="assets/pages/menu/themgiohang.php?idsanpham=<?php echo $row_chitiet['id_sanpham'] ?>#main_list">
         <div class="chitiet_sanpham">
+            <?php
+                if($row_chitiet['sale']==0){
+            ?>
             <h3 style="margin-bottom: 10px"><?php echo $row_chitiet['tensanpham'] ?></h3>
             <p style="font-weight: 600;">Mã sản phẩm: <?php echo $row_chitiet['masp'] ?></p>
-            <p style="font-weight: 600;">Giá sản phẩm: <?php echo number_format($row_chitiet['giasp'],0,',','.').'vnđ' ?></p>
+            <p style="font-weight: 600;color:#c48c46;font-size:17px;">Giá sản phẩm: <?php echo number_format($row_chitiet['giasp'],0,',','.').'đ' ?></p>
             <!-- <p style="font-weight: 600;">Giảm giá: <?php echo number_format($row_chitiet['sale']).'%' ?></p> -->
             <p style="font-weight: 600;">Danh mục sản phẩm: <?php echo $row_chitiet['tendanhmuc'] ?></p>
             <?php
@@ -59,6 +63,32 @@
             <?php
                 }
             ?>
+            <p><?php 
+                if(round($row_rating[0])==5){
+                    echo "<lable style='color:#ffb800;font-size:25px;'>★★★★★</lable>";
+                    echo " (";
+                    echo round($row_rating[0]).'/5 sao)';
+                }elseif(round($row_rating[0])==4){
+                    echo "<lable style='color:#ffb800;font-size:25px;'>★★★★☆</lable>";
+                    echo " (";
+                    echo round($row_rating[0]).'/5 sao)';
+                }elseif(round($row_rating[0])==3){
+                    echo "<lable style='color:#ffb800;font-size:25px;'>★★★☆☆</lable>";
+                    echo " (";
+                    echo round($row_rating[0]).'/5 sao)';
+                }elseif(round($row_rating[0])==2){
+                    echo "<lable style='color:#ffb800;font-size:25px;'>★★☆☆☆</lable>";
+                    echo " (";
+                    echo round($row_rating[0]).'/5 sao)';
+                }elseif(round($row_rating[0])==1){
+                    echo "<lable style='color:#ffb800;font-size:25px;'>★☆☆☆☆</lable>";
+                    echo " (";
+                    echo round($row_rating[0]).'/5 sao)';
+                }else{
+                    echo "<lable style='color:#ffb800;font-size:25px;'>☆☆☆☆☆</lable>";
+                    echo '(Chưa có đánh giá)';
+                }
+            ?></p>
             <?php
             if($row_chitiet['tinhtrang']==1 && $row_chitiet['soluong']>0){
             ?>
@@ -69,6 +99,66 @@
             <p><input disabled class="themgiohang" name="themgiohang" type="submit" value="Thêm giỏ hàng">(Không khả dụng)</p>
             <?php
             }
+            ?>
+            <?php
+                }else{
+            ?>
+            <h3 style="margin-bottom: 10px"><?php echo $row_chitiet['tensanpham'] ?></h3>
+            <p style="font-weight: 600;">Mã sản phẩm: <?php echo $row_chitiet['masp'] ?></p>
+            <p style="font-weight: 600;color:#c48c46;font-size:17px;">Giá sản phẩm: <?php echo number_format($row_chitiet['giasp']-($row_chitiet['giasp']*$row_chitiet['sale']/100),0,',','.').'đ' ?> <label style="text-decoration-line:line-through
+            ;font-size:15px;"><?php echo number_format($row_chitiet['giasp'],0,',','.').'đ' ?></label></p>
+            <!-- <p style="font-weight: 600;">Giảm giá: <?php echo number_format($row_chitiet['sale']).'%' ?></p> -->
+            <p style="font-weight: 600;">Danh mục sản phẩm: <?php echo $row_chitiet['tendanhmuc'] ?></p>
+            <?php
+                if($row_chitiet['soluong']==0){
+            ?>
+            <p style="color: red;font-weight:700;">Hết hàng</p>
+            <?php
+                }else{
+            ?>
+            <p style="font-weight: 600;">Số lượng tồn: <?php echo $row_chitiet['soluong'] ?> sản phẩm</p>
+            <?php
+                }
+            ?>
+            <p><?php 
+                if(round($row_rating[0])==5){
+                    echo "<lable style='color:#ffb800;font-size:25px;'>★★★★★</lable>";
+                    echo " (";
+                    echo round($row_rating[0]).'/5 sao)';
+                }elseif(round($row_rating[0])==4){
+                    echo "<lable style='color:#ffb800;font-size:25px;'>★★★★☆</lable>";
+                    echo " (";
+                    echo round($row_rating[0]).'/5 sao)';
+                }elseif(round($row_rating[0])==3){
+                    echo "<lable style='color:#ffb800;font-size:25px;'>★★★☆☆</lable>";
+                    echo " (";
+                    echo round($row_rating[0]).'/5 sao)';
+                }elseif(round($row_rating[0])==2){
+                    echo "<lable style='color:#ffb800;font-size:25px;'>★★☆☆☆</lable>";
+                    echo " (";
+                    echo round($row_rating[0]).'/5 sao)';
+                }elseif(round($row_rating[0])==1){
+                    echo "<lable style='color:#ffb800;font-size:25px;'>★☆☆☆☆</lable>";
+                    echo " (";
+                    echo round($row_rating[0]).'/5 sao)';
+                }else{
+                    echo "<lable style='color:#ffb800;font-size:25px;'>☆☆☆☆☆</lable>";
+                    echo '(Chưa có đánh giá)';
+                }
+            ?></p>
+            <?php
+            if($row_chitiet['tinhtrang']==1 && $row_chitiet['soluong']>0){
+            ?>
+            <p><input class="themgiohang" name="themgiohang" type="submit" value="Thêm giỏ hàng"></p>
+            <?php
+            }else{
+            ?>
+            <p><input disabled class="themgiohang" name="themgiohang" type="submit" value="Thêm giỏ hàng">(Không khả dụng)</p>
+            <?php
+            }
+            ?>
+            <?php
+                }
             ?>
         </div>
     </form>

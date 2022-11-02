@@ -1,10 +1,10 @@
 <div id="main">
      <!-- Slides -->
     <div id="slider">
-        <div class="text-content">
+        <!-- <div class="text-content">
             <h2 class="text-heading">GEMSTONEs</h2>
             <div class="text-discription">where you fulfill your wish</div>
-        </div>
+        </div> -->
     </div>
     <div id="main_list" class="main-content">
         <?php
@@ -58,10 +58,75 @@
     <div class="map-section">
         <!-- <img src="assets/img/cam-ket-sp-va-quyen-loi-kh.webp" alt="Map"> -->
         <video style="margin: 0px 100px 0px 0px;width: 100%;height:1px;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://cdn.shopify.com/videos/c/o/v/5994ac4914114e56bb2b91d606e077e1.mp4"></video>
-        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://cdn.shopify.com/s/files/1/0589/2105/8473/files/KoiRing4x5.mp4?v=1652175005"></video>
+        <p class="content1">SẢN PHẨM MỚI VỀ</p>
+        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://thumbs.gfycat.com/SimpleNiftyHumpbackwhale-mobile.mp4"></video>
       
-        <video style="width:33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://cdn.shopify.com/videos/c/o/v/5994ac4914114e56bb2b91d606e077e1.mp4"></video>
-        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://cdn.shopify.com/s/files/1/0589/2105/8473/files/KoiRing4x5.mp4?v=1652175005"></video>
+        <video style="width:33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://thumbs.gfycat.com/ShamelessSomeFlounder-mobile.mp4"></video>
+        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://thumbs.gfycat.com/FavoriteHighEland-mobile.mp4"></video>
     </div>
+    <style>
+        /* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 20px;
+  height: 350px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+    </style>
+    <div class="row">
+  <div style="text-align:justify; font-family:cursive;font-size:20px;" class="column"><h2>BRILLIANCE RING</h2>
+Diamonds: 55 round, 2.85 carat total weight (min)
+Diamond Color: G/H
+Diamond Clarity: VS/SI
+Width: 15.0 – 8.0 mm
+Metal Type: Available in 14 karat and 18 karat white, yellow, rose gold and also platinum.
+Metal Weight: 14K gold size 6.5 is approx. 15.15 grams
+SKU Number: LR3414
+<div style="margin-top: 25px;background-color:#17a2b8;text-align:center;" class="button-row inherit-colors align-left">
+              <a data-cc-animate-click="" class="button alt keychainify-checked" href="index.php?quanly=sanpham&id=16#main_list">
+                MUA NGAY
+              </a>
+            </div>
+</div>
+
+  <div style="text-align:justify; font-family:cursive;font-size:20px;" class="column"><h2>PRINCESS CUT TRELLIS</h2>
+Diamonds: 50 round, 1.69 carat total weight (min)
+Diamond Color: G/H
+Diamond Clarity: VS/SI
+Metal Type:  Available in 14 karat and 18 karat white, yellow, and pink gold and also platinum.
+Metal Weight: 14K size 6.5 is approx. 10.6 grams
+SKU Number: LR5208
+<div style="margin-top: 25px;background-color:#17a2b8;text-align:center;" class="button-row inherit-colors align-left">
+              <a data-cc-animate-click="" class="button alt keychainify-checked" href="index.php?quanly=sanpham&id=18#main_list">
+                MUA NGAY
+              </a>
+            </div></div>
+  <div style="text-align:justify; font-family:cursive;font-size:20px;" class="column"><h2>QUEEN OF HEARTS RING</h2>
+Diamonds: 16 round, 1.14 carat total weight (min)
+Diamond Color: G/H
+Diamond Clarity: VS/SI
+Width:  2.55 mm
+Metal Type: Available in 14 karat and 18 karat white, yellow, and pink gold and also platinum.
+Metal Weight: 14K Gold Size 6.5 is approx. 2.30 grams
+SKU Number: LR8280
+<div style="margin-top: 25px;background-color:#17a2b8;text-align:center;" class="button-row inherit-colors align-left">
+              <a data-cc-animate-click="" class="button alt keychainify-checked" href="index.php?quanly=sanpham&id=17#main_list">
+                MUA NGAY
+              </a>
+            </div></div>
+</div>
    
 </div>

@@ -64,7 +64,7 @@
             <?php echo $cart_item['soluong']; ?>
         </td>
         <td><?php echo number_format($cart_item['giasp'],0,',','.').'vnđ'; ?></td>
-        <td><?php echo number_format($cart_item['sale']).'%' ?></td>
+        <td><?php echo number_format($cart_item['sale']).'%' ?> (Còn: <?php echo number_format($cart_item['giasp']-$cart_item['giasp']*$cart_item['sale']/100,0,',','.').'đ'?>)</td>
         <td><?php echo number_format($thanhtien,0,',','.').'vnđ' ?></td>
     </tr>
     <?php
