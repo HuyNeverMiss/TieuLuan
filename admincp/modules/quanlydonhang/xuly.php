@@ -34,6 +34,7 @@
                 if($row_daban['id_nhaphang']==$id_nh){
                         $soluong1 = $row_daban['soluongdaban']+$soluong;
                         $update_soluongdaban = mysqli_query($mysqli,"UPDATE `tbl_nhaphang` SET soluongdaban = '".$soluong1."' WHERE id_nhaphang=$id_nh");
+                        $update_soluongdaban1 = mysqli_query($mysqli,"UPDATE `tbl_sanpham` SET soluongdaban = '".$soluong1."' WHERE id_nh=$id_nh");
                     }
                 }
             }

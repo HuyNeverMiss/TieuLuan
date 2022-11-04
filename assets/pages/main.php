@@ -58,7 +58,7 @@
     <div class="map-section">
         <!-- <img src="assets/img/cam-ket-sp-va-quyen-loi-kh.webp" alt="Map"> -->
         <video style="margin: 0px 100px 0px 0px;width: 100%;height:1px;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://cdn.shopify.com/videos/c/o/v/5994ac4914114e56bb2b91d606e077e1.mp4"></video>
-        <p class="content1">SẢN PHẨM MỚI VỀ</p>
+        <p class="content1">THỊNH HÀNH</p>
         <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://thumbs.gfycat.com/SimpleNiftyHumpbackwhale-mobile.mp4"></video>
       
         <video style="width:33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://thumbs.gfycat.com/ShamelessSomeFlounder-mobile.mp4"></video>

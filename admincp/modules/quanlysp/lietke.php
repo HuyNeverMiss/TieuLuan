@@ -15,7 +15,9 @@
         <th>Danh mục</th>
         <th>Giá nhập</th>
         <th>Giá bán</th>
-        <th>Số lượng</th>
+        <th>Số lượng tồn</th>
+        <th>Đã bán</th>
+        <th>Lợi nhuận</th>
         <th>Giảm giá</th>
         <th>Trạng thái</th>
         <th>Quản lý</th>
@@ -46,6 +48,8 @@
         <?php
           }
         ?>
+        <td><?php echo $row['soluongdaban']?></td>
+        <td><?php echo number_format($row['soluongdaban']*(($row['giasp']-($row['giasp']*$row['sale']/100))-$row['gianhap']),0,',','.').'đ'?></td>
         <td><?php echo $row['sale'].'%' ?></td>
         <!-- <td style="text-align:justify"><?php echo $row['tomtat'] ?></td> -->
         <td><?php if($row['tinhtrang']==1) {

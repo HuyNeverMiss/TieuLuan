@@ -106,7 +106,7 @@
             <h3 style="margin-bottom: 10px"><?php echo $row_chitiet['tensanpham'] ?></h3>
             <p style="font-weight: 600;">Mã sản phẩm: <?php echo $row_chitiet['masp'] ?></p>
             <p style="font-weight: 600;color:#c48c46;font-size:17px;">Giá sản phẩm: <?php echo number_format($row_chitiet['giasp']-($row_chitiet['giasp']*$row_chitiet['sale']/100),0,',','.').'đ' ?> <label style="text-decoration-line:line-through
-            ;font-size:15px;"><?php echo number_format($row_chitiet['giasp'],0,',','.').'đ' ?></label></p>
+            ;font-size:15px;"><?php echo number_format($row_chitiet['giasp'],0,',','.').'đ' ?></label> (<Label style="margin-left: 5px;color:red;">Sale: <?php echo number_format($row_chitiet['sale']).'%'?></Label>)</p>
             <!-- <p style="font-weight: 600;">Giảm giá: <?php echo number_format($row_chitiet['sale']).'%' ?></p> -->
             <p style="font-weight: 600;">Danh mục sản phẩm: <?php echo $row_chitiet['tendanhmuc'] ?></p>
             <?php
