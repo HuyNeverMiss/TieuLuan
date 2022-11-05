@@ -24,10 +24,10 @@
         <td><?php echo $row['email'] ?></td>
         <td><?php echo $row['diachi'] ?></td>
         <td><?php echo $row['matkhau'] ?></td>
-        <td><?php echo $row['dienthoai'] ?></td>
+        <td><?php echo '0'.number_format($row['dienthoai'],0,',','.') ?></td>
         <td>
-            <a style="padding: 10px 15px; border-radius: 4px;  background-color: green; color:aliceblue;" href="modules/quanlythanhvien/xuly.php?idkhachhang=<?php echo $row['id_khachhang'] ?>" style="color:aliceblue"><i class="ti-trash"></i></a>
-            <a style="padding: 10px 15px; border-radius: 4px;  background-color: green; color:aliceblue;" href="?action=quanlythanhvien&query=sua&idkhachhang=<?php echo $row['id_khachhang'] ?>" style="color:aliceblue"><i class="ti-pencil"></i></a>
+            <a style="padding: 10px 15px; border-radius: 4px;  background-color: #0062cc; color:aliceblue;" href="?action=quanlythanhvien&query=sua&idkhachhang=<?php echo $row['id_khachhang'] ?>" style="color:aliceblue"><i class="ti-pencil"></i></a>
+            <a style="padding: 10px 15px; border-radius: 4px;  background-color: red; color:aliceblue;" href="modules/quanlythanhvien/xuly.php?idkhachhang=<?php echo $row['id_khachhang'] ?>" style="color:aliceblue"><i class="ti-trash"></i></a>
         </td>
     </tr>
     <?php

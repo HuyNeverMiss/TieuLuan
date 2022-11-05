@@ -35,6 +35,8 @@
                         $soluong1 = $row_daban['soluongdaban']+$soluong;
                         $update_soluongdaban = mysqli_query($mysqli,"UPDATE `tbl_nhaphang` SET soluongdaban = '".$soluong1."' WHERE id_nhaphang=$id_nh");
                         $update_soluongdaban1 = mysqli_query($mysqli,"UPDATE `tbl_sanpham` SET soluongdaban = '".$soluong1."' WHERE id_nh=$id_nh");
+                        $loinhuan = $soluong*($row['giasp']-($row['giasp']*$row['sale']/100)-$row['gianhap'])+$row['loinhuan'];
+                        $update_loinhuan = mysqli_query($mysqli,"UPDATE `tbl_sanpham` SET loinhuan = '".$loinhuan."' WHERE id_nh=$id_nh");
                     }
                 }
             }

@@ -18,10 +18,10 @@
         <td><?php echo $i ?></td>
         <td><?php echo $row['tendanhmuc'] ?></td>
         <td>
-            <a style="padding: 10px 15px; border-radius: 4px; background-color: green; color:aliceblue;" href="modules/quanlydanhmucsp/xuly.php?iddanhmuc=<?php echo $row['id_danhmuc'] ?>"
-                style="color:aliceblue"><i class="ti-trash"></i></a>
-            <a style="padding: 10px 15px; border-radius: 4px; background-color: green; color:aliceblue;" href="?action=quanlydanhmucsanpham&query=sua&iddanhmuc=<?php echo $row['id_danhmuc'] ?>"
+            <a style="padding: 10px 15px; border-radius: 4px; background-color: #0062cc; color:aliceblue;" href="?action=quanlydanhmucsanpham&query=sua&iddanhmuc=<?php echo $row['id_danhmuc'] ?>"
                 style="color:aliceblue"><i class="ti-pencil"></i></a>
+            <a style="padding: 10px 15px; border-radius: 4px; background-color: red; color:aliceblue;" href="modules/quanlydanhmucsp/xuly.php?iddanhmuc=<?php echo $row['id_danhmuc'] ?>"
+                style="color:aliceblue"><i class="ti-trash"></i></a>
         </td>
     </tr>
     <?php

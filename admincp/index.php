@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon"
-        href="https://as2.ftcdn.net/v2/jpg/01/89/93/15/500_F_189931538_5U6zWS544KbTAWHCf2TbKvCEoOcWjHqe.jpg"
+        href="https://cdn1.iconfinder.com/data/icons/web-65/48/78-512.png"
         type="image/x-icon" />
     <link rel="stylesheet" href="./css/styleadmincp.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">

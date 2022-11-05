@@ -4,7 +4,26 @@
     echo 'xin chào: '.'<span style="color:red">'.$_SESSION['dangky'].'</span>'; 
   } 
   ?>
-            <div class="col-md-8">
+</p>
+<?php
+	if(isset($_SESSION['cart'])){
+		
+	}
+?>
+<?php
+  if(isset($_SESSION['id_khachhang'])){
+?>
+<div class="container1">
+    <!-- Responsive Arrow Progress Bar -->
+    <div style="font-weight: 600;" class="arrow-steps clearfix">
+        <div class="step current"> <span> <a href="index.php?quanly=giohang#main_list">Giỏ hàng</a></span> </div>
+        <div class="step"> <span><a href="index.php?quanly=vanchuyen#main_list">Vận chuyển</a></span> </div>
+        <div class="step"> <span><a href="index.php?quanly=thongtinthanhtoan#main_list">Thông tin thanh toán</a><span>
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="col-md-8">
            <?php
     if(isset($_SESSION['id_khachhang'])){
         $id=$_SESSION['id_khachhang'];
@@ -36,24 +55,6 @@
     }
     ?>
            </div>
-</p>
-<?php
-	if(isset($_SESSION['cart'])){
-		
-	}
-?>
-<?php
-  if(isset($_SESSION['id_khachhang'])){
-?>
-<div class="container1">
-    <!-- Responsive Arrow Progress Bar -->
-    <div style="font-weight: 600;" class="arrow-steps clearfix">
-        <div class="step current"> <span> <a href="index.php?quanly=giohang#main_list">Giỏ hàng</a></span> </div>
-        <div class="step"> <span><a href="index.php?quanly=vanchuyen#main_list">Vận chuyển</a></span> </div>
-        <div class="step"> <span><a href="index.php?quanly=thongtinthanhtoan#main_list">Thông tin thanh toán</a><span>
-        </div>
-    </div>
-</div>
 <?php
   }
 ?>

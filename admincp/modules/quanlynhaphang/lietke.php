@@ -34,16 +34,16 @@
         <td><?php echo $row['soluongdaban'] ?></td>
         <td><?php echo number_format($row['gianhap']*$row['soluong1'],0,',','.').'đ'?></td>
         <td><?php if($row['tinhtrang']==1) {
-        echo 'Đã thanh toán';
+        echo '<b style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;">Đã thanh toán</b>';
       }else{
-        echo 'Chưa thanh toán';
+        echo '<b style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: red;">Chưa thanh toán</b>';
       } ?></td>
         <td>
-            <a href="modules/quanlynhaphang/xuly.php?idnhaphang=<?php echo $row['id_nhaphang'] ?>"
-                style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;"><i class="ti-trash"></i></a>
             <a href="?action=quanlynhaphang&query=sua&idnhaphang=<?php echo $row['id_nhaphang'] ?>"
-                style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;"><i class="ti-pencil"></i></a>
-            <a style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;" href="modules/quanlynhaphang/innhaphang.php"><i class="ti-printer"></i></a>
+                style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: #0062cc;"><i class="ti-pencil"></i></a>
+            <a style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: orange;" href="modules/quanlynhaphang/innhaphang.php"><i class="ti-printer"></i></a>
+            <a href="modules/quanlynhaphang/xuly.php?idnhaphang=<?php echo $row['id_nhaphang'] ?>"
+                style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: red;"><i class="ti-trash"></i></a>
         </td>
     </tr>
     <?php

@@ -49,19 +49,19 @@
           }
         ?>
         <td><?php echo $row['soluongdaban']?></td>
-        <td><?php echo number_format($row['soluongdaban']*(($row['giasp']-($row['giasp']*$row['sale']/100))-$row['gianhap']),0,',','.').'đ'?></td>
+        <td><?php echo number_format($row['loinhuan'],0,',','.').'đ'?></td>
         <td><?php echo $row['sale'].'%' ?></td>
         <!-- <td style="text-align:justify"><?php echo $row['tomtat'] ?></td> -->
         <td><?php if($row['tinhtrang']==1) {
-        echo 'Kích hoạt';
+        echo '<b style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;">Active</b>';
       }else{
-        echo 'Ẩn';
+        echo '<b style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: red;">Inactive</b>';
       } ?></td>
         <td> 
-            <p><a href="modules/quanlysp/xuly.php?idsanpham=<?php echo $row['id_sanpham'] ?>"
-                style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;"><i class="ti-trash"></i></a></p>
             <p><a href="?action=quanlysp&query=sua&idsanpham=<?php echo $row['id_sanpham'] ?>"
-                style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;"><i class="ti-pencil"></i></a></p>
+                style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: #0062cc;"><i class="ti-pencil"></i></a></p>
+            <p><a href="modules/quanlysp/xuly.php?idsanpham=<?php echo $row['id_sanpham'] ?>"
+                style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: red;"><i class="ti-trash"></i></a></p>
         </td>
     </tr>
     <?php
