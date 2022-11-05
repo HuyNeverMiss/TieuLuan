@@ -1,10 +1,118 @@
-<?php
+<!-- <?php
     $sql_lietke_sp = "SELECT * FROM tbl_sanpham,tbl_danhmuc,tbl_nhacungcap WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.id_ncc =tbl_nhacungcap.id
     ORDER BY id_sanpham DESC";
     $query_lietke_sp = mysqli_query($mysqli,$sql_lietke_sp);
+?> -->
+<?php
+    $query = "SELECT tensanpham,loinhuan FROM tbl_sanpham";
+    $result = mysqli_query($mysqli,$query);
+    $data = [];
+    while($rule = mysqli_fetch_array($result)){
+      $data[] = $rule;
+    }
+    // echo '<pre>';
+    // var_dump($data);
+    // echo '<pre>';
 ?>
-<p style="font-size: 20px;margin-top:15px;"><b>Liệt kê sản phẩm</b></p>
-<table style="text-align:center" class="table table-hover table-dark" style="width: 100%;" border="1" style="border-collapse: collapse;">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Lợi nhuận", { role: "style" } ],
+        <?php
+           foreach($data as $key){
+            echo '["'.$key['tensanpham'].'", '.$key['loinhuan'].', "gold"],';
+           }
+        ?>
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Thông kê hàng lợi nhuận",
+        width: 2000,
+        height: 300,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+  <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+<p style="font-size: 30px;margin-top:15px;text-align:center;"><b>Liệt kê sản phẩm</b></p>
+<?php
+	if(isset($_GET['trang'])){
+		$page = $_GET['trang'];
+	}else{
+		$page = 1;
+	}
+	if($page == '' || $page == 1){
+		$begin = 0;
+	}else{
+		$begin = ($page-1)* 10;
+	}
+	$sql_pro = "SELECT * FROM tbl_sanpham,tbl_danhmuc,tbl_nhacungcap WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.id_ncc =tbl_nhacungcap.id ORDER BY id_sanpham DESC LIMIT $begin,10";
+	$query_pro = mysqli_query($mysqli,$sql_pro);
+	
+?>
+<div style="clear:both;"></div>
+<style type="text/css">
+ul.list_trang {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.list_trang li {
+    float: left;
+    padding: 5px 13px;
+    margin: 5px;
+    background: burlywood;
+    display: block;
+    border-radius: 50%
+}
+
+ul.list_trang li:hover {
+    background-color: gray;
+}
+
+ul.list_trang li a {
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+</style>
+<?php
+$sql_trang = mysqli_query($mysqli,"SELECT * FROM tbl_sanpham,tbl_danhmuc,tbl_nhacungcap WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.id_ncc =tbl_nhacungcap.id");
+$row_count = mysqli_num_rows($sql_trang);  
+$trang = ceil($row_count/10);
+?>
+<p style="font-weight: 600;">Trang hiện tại : <?php echo $page ?>/<?php echo $trang ?> </p>
+
+<ul class="list_trang">
+
+    <?php
+					
+	for($i=1;$i<=$trang;$i++){ 
+	?>
+    <li <?php if($i==$page){echo 'style="background: brown;"';}else{ echo ''; }  ?>><a
+            href="index.php?action=quanlysp&query=them&trang=<?php echo $i ?>#list"><?php echo $i ?></a></li>
+    <?php
+	} 
+	?>
+
+</ul>
+<table id="list" style="text-align:center" class="table table-hover table-dark" style="width: 100%;" border="1" style="border-collapse: collapse;">
     <tr>
         <th>ID</th>
         <th>ID_NH</th>
@@ -24,7 +132,7 @@
     </tr>
     <?php
     $i = 0;
-    while($row = mysqli_fetch_array($query_lietke_sp)){
+    while($row = mysqli_fetch_array($query_pro)){
         $i++;    
   ?>
     <tr>

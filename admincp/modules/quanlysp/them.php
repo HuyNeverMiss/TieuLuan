@@ -1,4 +1,42 @@
-<p style="font-size: 20px;margin-top:15px;"><b>Thêm sản phẩm</b></p>
+  <?php
+    $query = "SELECT `tbl_danhmuc`.*, COUNT(tbl_sanpham.id_danhmuc) AS 'soluongsanpham' FROM `tbl_sanpham` INNER JOIN `tbl_danhmuc` ON tbl_sanpham.id_danhmuc = tbl_danhmuc.id_danhmuc GROUP BY tbl_sanpham.id_danhmuc DESC";
+    $result = mysqli_query($mysqli,$query);
+    $data = [];
+    while($rule = mysqli_fetch_array($result)){
+      $data[] = $rule;
+    }
+?>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['tendanhmuc', 'soluongsanpham'],
+          <?php
+            foreach($data as $key){
+                echo "['".$key['tendanhmuc']."',".$key['soluongsanpham']."],";
+            }
+          ?>
+        ]);
+
+        var options = {
+          title: 'Thống kê sản phẩm',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart_3d" style="width: 700px; height: 300px;"></div>
+  </body>
+</html>
+<p style="font-size: 30px;margin-top:15px;text-align:center;"><b>Thêm sản phẩm</b></p>
 <table class="table table-hover table-dark" border="1px" style="width: 100%;" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlysp/xuly.php" enctype="multipart/form-data">
         <tr>

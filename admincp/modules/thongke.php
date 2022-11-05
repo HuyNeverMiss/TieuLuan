@@ -8,18 +8,18 @@
     	$thoigian = $_POST['thoigian'];
 	}else{
 		$thoigian = '';
-		$subdays = Carbon::now('Asia/Ho_Chi_Minh')->subdays(364)->toDateString();	
+		$subdays = Carbon::now('Asia/Ho_Chi_Minh')->subdays(365)->toDateString();	
 	}
 
    
     if($thoigian=='7ngay'){
-    	$subdays = Carbon::now('Asia/Ho_Chi_Minh')->subdays(6)->toDateString();
+    	$subdays = Carbon::now('Asia/Ho_Chi_Minh')->subdays(7)->toDateString();
 	}elseif($thoigian=='28ngay'){
-    	$subdays = Carbon::now('Asia/Ho_Chi_Minh')->subdays(27)->toDateString();
+    	$subdays = Carbon::now('Asia/Ho_Chi_Minh')->subdays(28)->toDateString();
 	}elseif($thoigian=='90ngay'){
-    	$subdays = Carbon::now('Asia/Ho_Chi_Minh')->subdays(89)->toDateString();
+    	$subdays = Carbon::now('Asia/Ho_Chi_Minh')->subdays(90)->toDateString();
 	}elseif($thoigian=='365ngay'){
-		$subdays = Carbon::now('Asia/Ho_Chi_Minh')->subdays(364)->toDateString();	
+		$subdays = Carbon::now('Asia/Ho_Chi_Minh')->subdays(365)->toDateString();	
 	}
     $now = Carbon::now('Asia/Ho_Chi_Minh')->toDateString(); 
 

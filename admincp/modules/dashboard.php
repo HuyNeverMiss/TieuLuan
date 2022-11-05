@@ -5,6 +5,7 @@
     </div>
 </div>
 <p class="content">Thống kê</p>
+
 <p><b style="font-size: 20px;">Thống kê đơn hàng theo : </b><span style="font-weight: 700;" id="text-date"></span></p>
 <p>
     <select class="select-date">
