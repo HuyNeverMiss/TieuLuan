@@ -37,7 +37,7 @@ use Carbon\Carbon;
 			}
 			unset($_SESSION['cart']);
             echo '<h3 style="color: green;">Giao dịch thanh toán VNPAY thành công <i style="background-color:yellow;border-radius: 45%;" class="ti-face-smile"></i></h3>';
-            echo '<p>Vui lòng vào trang <a target="_blank" href="http://localhost:8080/NienLuanNganh/index.php?quanly=lichsudonhang#main_list">Lịch sử đơn hàng</a> để xem chi tiết đơn hàng của bạn</p>';
+            echo '<p>Vui lòng vào trang <a target="_blank" href="http://localhost:8080/TieuLuan/index.php?quanly=lichsudonhang#main_list">Lịch sử đơn hàng</a> để xem chi tiết đơn hàng của bạn</p>';
         }
     }elseif(isset($_GET['partnerCode']) && $_GET['resultCode']=='0'){
         $id_khachhang = $_SESSION['id_khachhang'];
@@ -72,12 +72,12 @@ use Carbon\Carbon;
             }
             unset($_SESSION['cart']);
             echo '<h3 style="color:green;">Giao dịch thanh toán MOMO thành công <i style="background-color:yellow;border-radius: 45%;" class="ti-face-smile"></i></h3>';
-            echo '<p>Vui lòng vào trang <a target="_blank" href="http://localhost:8080/NienLuanNganh/index.php?quanly=lichsudonhang#main_list">Lịch sử đơn hàng</a> để xem chi tiết đơn hàng của bạn</p>';
+            echo '<p>Vui lòng vào trang <a target="_blank" href="http://localhost:8080/TieuLuan/index.php?quanly=lichsudonhang#main_list">Lịch sử đơn hàng</a> để xem chi tiết đơn hàng của bạn</p>';
         }
     }else{
         unset($_SESSION['cart']);
         echo '<h3>Giao dịch thất bại!!! <i style="background-color:yellow;border-radius: 45%;" class="ti-face-sad"></i></h3>';
-        echo '<p><a target="_blank" href="http://localhost:8080/NienLuanNganh/index.php?quanly=lichsudonhang#main_list">Lịch sử đơn hàng</a></p>';
+        echo '<p><a target="_blank" href="http://localhost:8080/TieuLuan/index.php?quanly=lichsudonhang#main_list">Lịch sử đơn hàng</a></p>';
     }
 ?>
 <style>

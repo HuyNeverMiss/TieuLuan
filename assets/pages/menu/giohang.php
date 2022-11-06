@@ -31,12 +31,13 @@
         $query = mysqli_query($mysqli,$sql);
         while($row = mysqli_fetch_array($query)){
      ?>   
-        <h1 style="font-weight:700;">Thông Tin Khách Hàng</h1>
+        <h1 style="font-weight:700;font-size:24px;color:#009999">Thông Tin Khách Hàng</h1>
         <table class="table table-striped">
                 <thead>
                      <th>Tên khách hàng</th>
                      <th>Email</th>
                      <th>Địa Chỉ</th>
+                     
                      <th>Số Điện Thoại</th>
                 </thead>
                 <tbody>

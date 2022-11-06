@@ -31,8 +31,8 @@ $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
 $orderInfo = "Thanh toán qua mã QR MoMo";
 $amount = $_POST['tongtien'];
 $orderId = time() ."";
-$redirectUrl = "http://localhost:8080/NienLuanNganh/index.php?quanly=thanks";
-$ipnUrl = "http://localhost:8080/NienLuanNganh/index.php?quanly=thanks";
+$redirectUrl = "http://localhost:8080/TieuLuan/index.php?quanly=thanks";
+$ipnUrl = "http://localhost:8080/TieuLuan/index.php?quanly=thanks";
 $extraData = "";
 
 
