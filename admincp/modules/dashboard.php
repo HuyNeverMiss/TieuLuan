@@ -1,6 +1,6 @@
 <div id="slider_admincp">
     <div class="text-content">
-        <h2 class="text-heading">SNEAKERSHOP</h2>
+        <h2 class="text-heading">GEMSTONEs</h2>
         <div class="text-discription">where you fulfill your wish</div>
     </div>
 </div>

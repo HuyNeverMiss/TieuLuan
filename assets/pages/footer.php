@@ -202,8 +202,13 @@
                                 <a href="#main_list"><img style="border-radius: 50%;" src="https://cdn1.iconfinder.com/data/icons/web-65/48/78-512.png" class="img-fluid" alt="logo"></a>
                             </div>
                             <div class="footer-text">
-                                <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
-                                elit,Lorem ipsum dolor sit amet.</p>
+                                <p><div class="cc-tabs__tab__panel rte" role="tab" id="product-tab-panel1_7695243116765" aria-labelledby="product-tab-panel1_7695243116765">
+        <blockquote data-mce-fragment="1">
+<hr data-mce-fragment="1">
+<h1 style="color: #fff;" data-mce-fragment="1">Dây chuyền, vòng cổ tại GEMSTONEs có gì nổi bật.</h1>
+<h1 style="color: #fff;" data-mce-fragment="1">1. Yên tâm về chất lượng</h1>
+<p data-mce-fragment="1">Các mẫu&nbsp;<a href="index.php?quanly=danhmucsanpham&id=3#main_list" data-mce-fragment="1" data-mce-href="index.php?quanly=danhmucsanpham&id=3#main_list" class="keychainify-checked">Dây chuyền</a>,<span data-mce-fragment="1">&nbsp;</span><a href="index.php?quanly=danhmucsanpham&id=4#main_list" data-mce-fragment="1" data-mce-href="index.php?quanly=danhmucsanpham&id=4#main_list" class="keychainify-checked">vòng tay</a>&nbsp; tại GEMSTONEs được lựa chọn và sàng lọc một cách kĩ càng về chất lượng, với chất liệu và dây được làm từ hợp kim titan trắng, đá, dây dù... cực kì chắc chắn và bền bỉ theo thời gian.</p>
+      </div></p>
                             </div>
                             <div class="footer-social-icon">
                                 <span>Follow us</span>
@@ -230,6 +235,8 @@
                                 <li><a href="#main_list">Contact us</a></li>
                                 <li><a href="#main_list">Latest News</a></li>
                             </ul>
+                            <h1 style="color: #fff;" data-mce-fragment="1">2. Mẫu mã đa dạng</h1>
+<p style="color: #878787;" data-mce-fragment="1">Luôn luôn update những mẫu mặt dây chuyền theo mùa, theo trend, theo phong cách của giới trẻ, đã có hơn 100 mẫu dây chuyền cập bên tại GEMSTONEs, với nhiều chất liệu, kiểu cách. Và không dừng ở con số đó, mỗi ngày Helios đều sẽ tiếp tục update các mẫu sản phẩm mới.</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
@@ -246,6 +253,9 @@
                                     <button><i class="ti-upload"></i></button>
                                 </form>
                             </div>
+                            <h1 style="color: #fff;" data-mce-fragment="1">3. Giá cả hợp lý&nbsp;</h1>
+<p style="color: #878787;" data-mce-fragment="1">Đến với các sản phẩm của GEMSTONEs, khách hàng có quyền yên tâm về sản phẩm với mức giá mình bỏ ra. Luôn có các event, các ưu đãi cho khách hàng mới, tri ân khách hàng cũ.&nbsp;</p>
+<p style="color: #878787;" data-mce-fragment="1">Ngoài ra, các sản phẩm của GEMSTONEs đều có chế độ bảo hành theo từng dòng sản phẩm, chúng tôi làm tất cả để khách hàng có thể yên tâm khi sử dụng sản phẩm tại GEMSTONEs.</p>
                         </div>
                     </div>
                 </div>
