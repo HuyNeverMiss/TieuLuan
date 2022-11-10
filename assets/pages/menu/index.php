@@ -15,9 +15,9 @@
 	
 ?>
 <p class="content">SẢN PHẨM NỔI BẬT</p>
-        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://cdn.shopify.com/s/files/1/0589/2105/8473/files/KoiRing4x5.mp4?v=1652175005"></video>
-        <video style="width:33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://cdn.shopify.com/videos/c/o/v/5994ac4914114e56bb2b91d606e077e1.mp4"></video>
-        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://cdn.shopify.com/s/files/1/0589/2105/8473/files/KoiRing4x5.mp4?v=1652175005"></video>
+        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/KoiRing4x5.mp4"></video>
+        <video style="width:33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/5994ac4914114e56bb2b91d606e077e1.mp4"></video>
+        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/KoiRing4x5.mp4"></video>
 <style>
         /* Create three equal columns that floats next to each other */
 .column {

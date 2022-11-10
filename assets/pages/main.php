@@ -59,10 +59,10 @@
         <!-- <img src="assets/img/cam-ket-sp-va-quyen-loi-kh.webp" alt="Map"> -->
         <video style="margin: 0px 100px 0px 0px;width: 100%;height:1px;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://cdn.shopify.com/videos/c/o/v/5994ac4914114e56bb2b91d606e077e1.mp4"></video>
         <p class="content1">THỊNH HÀNH</p>
-        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://thumbs.gfycat.com/SimpleNiftyHumpbackwhale-mobile.mp4"></video>
+        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/video1.mp4"></video>
       
-        <video style="width:33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://thumbs.gfycat.com/ShamelessSomeFlounder-mobile.mp4"></video>
-        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://thumbs.gfycat.com/FavoriteHighEland-mobile.mp4"></video>
+        <video style="width:33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/video2.mp4"></video>
+        <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/video3.mp4"></video>
     </div>
     <style>
         /* Create three equal columns that floats next to each other */
@@ -128,8 +128,7 @@ SKU Number: LR8280
               </a>
             </div></div>
 </div>
-<video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://video.cdninstagram.com/o1/v/t16/f1/m82/01469FA4A32CB2F98C06D79E1F09D4A9_video_dashinit.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjcyMC5jbGlwcyJ9&_nc_ht=video.cdninstagram.com&_nc_cat=103&vs=2295512613960039_2110353407&_nc_vs=HBksFQIYT2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfcHJvZC8wMTQ2OUZBNEEzMkNCMkY5OEMwNkQ3OUUxRjA5RDRBOV92aWRlb19kYXNoaW5pdC5tcDQVAALIAQAVABgkR1BYMm14SkJrdGVsMlBrQ0FHYXhWdjJnZUg5T2JxX0VBQUFGFQICyAEAKAAYABsBiAd1c2Vfb2lsATEVAAAm7vKwtozm8D8VAigCQzMsF0ATyLQ5WBBiGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHUAAA%3D%3D&ccb=9-4&oh=00_AfDEoxeYMLbRVXpOFZT5AJIoRifq4yLaoKUdMDUMVcpsjg&oe=6368A9F2&_nc_sid=ea0b6e&_nc_rid=5bb8b03971"></video>
-<video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://video.cdninstagram.com/o1/v/t16/f1/m82/584EDFE23F2325CCC1C04787933EB099_video_dashinit.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjcyMC5jbGlwcyJ9&_nc_ht=video.cdninstagram.com&_nc_cat=100&vs=829747914838729_3007693433&_nc_vs=HBksFQIYT2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfcHJvZC81ODRFREZFMjNGMjMyNUNDQzFDMDQ3ODc5MzNFQjA5OV92aWRlb19kYXNoaW5pdC5tcDQVAALIAQAVABgkR0FBUXRCSzRSVm03RWRrQ0FHT3V6cDVSaDlKX2JxX0VBQUFGFQICyAEAKAAYABsBiAd1c2Vfb2lsATEVAAAmzq3BhJLhzj8VAigCQzMsF0A8%2Bp%2B%2Bdsi0GBJkYXNoX2Jhc2VsaW5lXzFfdjERAHUAAA%3D%3D&ccb=9-4&oh=00_AfC0FS6SKscytwci5sx78RbEGzD_gBeaCgj8KF5K0nZ8zg&oe=6368D9BA&_nc_sid=ea0b6e&_nc_rid=02d92ab071"></video>
-<video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="https://video.cdninstagram.com/o1/v/t16/f1/m82/B44C104D81A9B3A51F10716BD7AD8197_video_dashinit.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjcyMC5jbGlwcyJ9&_nc_ht=video.cdninstagram.com&_nc_cat=101&vs=1482440935597751_2868750433&_nc_vs=HBksFQIYT2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfcHJvZC9CNDRDMTA0RDgxQTlCM0E1MUYxMDcxNkJEN0FEODE5N192aWRlb19kYXNoaW5pdC5tcDQVAALIAQAVABgkR0FZa3ZoSUMxeXVYWFlJQkFPeXNydDEzaHNoWWJxX0VBQUFGFQICyAEAKAAYABsBiAd1c2Vfb2lsATEVAAAm3rrdwfH93z8VAigCQzMsF0A1SwIMSbpeGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHUAAA%3D%3D&ccb=9-4&oh=00_AfA1FPqbp-V6ZQqGtxqotwXp8XI1DHj5ZajMHOdlaWgGFQ&oe=6368C13E&_nc_sid=ea0b6e&_nc_rid=a034aa52c8"></video>
-
+<video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/2C400526DC472B3D1935C7818CD61995_video_dashinit.mp4"></video>
+<video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/2C400526DC472B3D1935C7818CD61995_video_dashinit.mp4"></video>
+<video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/2C400526DC472B3D1935C7818CD61995_video_dashinit.mp4"></video>
 </div>
