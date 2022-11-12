@@ -22,7 +22,7 @@
 </style>
 <p class="thanks1">
     <label>(Nếu chọn hình thức thanh toán là chuyển khoản vui lòng chuyển khoản vào tài khoản bên dưới)</label><br>
-    <label>Nội dung chuyển khoản: Họ tên đã đăng ký + tên giày</label><br>
+    <label>Nội dung chuyển khoản: Họ tên đã đăng ký + tên sản phẩm</label><br>
     <label>STK: 01932456789</label><br>
     <label>Họ và tên: Diệp Thanh Huy</label><br>
     <label>Ngân hàng: Aribank</label><br>

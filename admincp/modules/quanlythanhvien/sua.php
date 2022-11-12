@@ -2,7 +2,7 @@
     $sql_sua_thanhvien = "SELECT * FROM tbl_khachhang WHERE id_khachhang ='$_GET[idkhachhang]' LIMIT 1";
     $query_sua_thanhvien = mysqli_query($mysqli,$sql_sua_thanhvien);
 ?>
-<p style="font-size: 20px;margin-top:15px;"><b>Điều chỉnh thành viên</b></p>
+<p style="width:98.8%; height:40px; background-color:rgb(235, 231, 231);text-align:center;font-size:30px;font-weight:600;line-height:40px;margin: 20px 10px;"><b>Điều chỉnh thành viên</b></p>
 <table class="table table-hover table-dark" border="1px" style="width: 50%;" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlythanhvien/xuly.php?idkhachhang=<?php echo $_GET['idkhachhang']?>">
         <?php

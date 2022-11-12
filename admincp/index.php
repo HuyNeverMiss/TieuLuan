@@ -57,7 +57,7 @@
             barColors: ["#B21516", "#1531B2", "#1AB244", "#B29215"]
         });
 
-        $('.select-date').change(function() {
+        $('.custom-select').change(function() {
             var thoigian = $(this).val();
             if (thoigian == '7ngay') {
                 var text = '7 ngày qua';

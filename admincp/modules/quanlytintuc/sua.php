@@ -2,7 +2,7 @@
 	$sql_sua_bv = "SELECT * FROM tbl_tintuc WHERE id='$_GET[idtintuc]' LIMIT 1";
 	$query_sua_bv = mysqli_query($mysqli,$sql_sua_bv);
 ?>
-<p style="font-size: 20px;margin-top:15px;"><b>Điều chỉnh tin tức</b></p>
+<p style="width:98.8%; height:40px; background-color:rgb(235, 231, 231);text-align:center;font-size:30px;font-weight:600;line-height:40px;margin: 20px 10px;"><b>Điều chỉnh tin tức</b></p>
 <table class="table hover table-dark" border="1" width="100%" style="border-collapse: collapse;">
     <?php
 while($row = mysqli_fetch_array($query_sua_bv)) {

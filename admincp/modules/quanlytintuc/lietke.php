@@ -2,7 +2,7 @@
 	$sql_lietke_bv = "SELECT * FROM tbl_tintuc ORDER BY tbl_tintuc.id DESC";
 	$query_lietke_bv = mysqli_query($mysqli,$sql_lietke_bv);
 ?>
-<p style="font-size: 20px;margin-top:15px;"><b>Liệt kê bài viết</b></p>
+<p style="width:98.8%; height:40px; background-color:rgb(235, 231, 231);text-align:center;font-size:30px;font-weight:600;line-height:40px;margin: 20px 10px;"><b>Liệt kê bài viết</b></p>
 <table style="text-align:center" class="table hover table-dark" style="width:100%" border="1" style="border-collapse: collapse;">
     <tr>
         <th>Id</th>
@@ -30,8 +30,8 @@
       ?>
         </td>
         <td>
-            <p><a style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;" href="modules/quanlytintuc/xuly.php?idtintuc=<?php echo $row['id'] ?>"><i class="ti-trash"></i></a></p>
-            <p><a style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: green;" href="?action=quanlytintuc&query=sua&idtintuc=<?php echo $row['id'] ?>"><i class="ti-pencil"></i></a></p>
+            <p><a style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: #0062cc;" href="?action=quanlytintuc&query=sua&idtintuc=<?php echo $row['id'] ?>"><i class="ti-pencil"></i></a></p>
+            <p><a style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: red;" href="modules/quanlytintuc/xuly.php?idtintuc=<?php echo $row['id'] ?>"><i class="ti-trash"></i></a></p>
         </td>
 
     </tr>

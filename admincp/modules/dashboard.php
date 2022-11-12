@@ -6,14 +6,24 @@
 </div>
 <p class="content">Thống kê</p>
 
-<p><b style="font-size: 20px;">Thống kê đơn hàng theo : </b><span style="font-weight: 700;" id="text-date"></span></p>
+<p><div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span style="background-color: #d39e00;" class="input-group-text" id="inputGroup-sizing-sm">Thống kê theo</span>
+    <span class="input-group-text" id="inputGroup-sizing-sm"><span style="font-weight: 700;" id="text-date"></span></span>
+  </div>
+</div></p>
 <p>
-    <select class="select-date">
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label style="background-color: #d39e00;" class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+    <select class="custom-select">
         <option value="7ngay">7 ngày qua</option>
         <option value="28ngay">28 ngày qua</option>
         <option value="90ngay">90 ngày qua</option>
         <option value="365ngay">365 ngày qua</option>
     </select>
+</div>
 </p>
 <?php
      $sql_khachhang = "SELECT * FROM tbl_khachhang";

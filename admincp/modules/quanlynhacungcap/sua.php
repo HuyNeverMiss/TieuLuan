@@ -2,7 +2,7 @@
     $sql_sua_nhacungcap_sp = "SELECT * FROM tbl_nhacungcap WHERE id ='$_GET[idncc]' LIMIT 1";
     $query_sua_nhacungcap_sp = mysqli_query($mysqli,$sql_sua_nhacungcap_sp);
 ?>
-<p style="font-size: 20px;margin-top:15px;"><b>Điều chỉnh nhà cung cấp</b></p>
+<p style="width:98.8%; height:40px; background-color:rgb(235, 231, 231);font-size:22px;font-weight:600;line-height:40px;margin: 20px 10px;"><b>Điều chỉnh nhà cung cấp</b></p>
 <table class="table table-hover table-dark" border="1px" style="width: 50%;" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlynhacungcap/xuly.php?idncc=<?php echo $_GET['idncc']?>">
         <?php

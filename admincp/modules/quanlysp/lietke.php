@@ -48,7 +48,7 @@
   }
   </script>
   <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
-<p style="font-size: 30px;margin-top:15px;text-align:center;"><b>Liệt kê sản phẩm</b></p>
+<p style="width:98.8%; height:40px; background-color:rgb(235, 231, 231);text-align:center;font-size:30px;font-weight:600;line-height:40px;margin: 20px 10px;"><b>Liệt kê sản phẩm</b></p>
 <?php
 	if(isset($_GET['trang'])){
 		$page = $_GET['trang'];

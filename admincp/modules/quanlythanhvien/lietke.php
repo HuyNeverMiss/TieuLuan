@@ -2,7 +2,7 @@
     $sql_lietke_thanhvien = "SELECT * FROM tbl_khachhang ORDER BY tbl_khachhang.id_khachhang DESC";
     $query_lietke_thanhvien = mysqli_query($mysqli,$sql_lietke_thanhvien);
 ?>
-<p style="font-size: 20px;margin-top:15px;"><b>Liệt kê thành viên</b></p>
+<p style="width:98.8%; height:40px; background-color:rgb(235, 231, 231);text-align:center;font-size:30px;font-weight:600;line-height:40px;margin: 20px 10px;"><b>Liệt kê thành viên</b></p>
 <table style="text-align:center" class="table table-hover table-dark" style="width: 100%;" border="1" style="border-collapse: collapse;">
     <tr>
         <th>ID</th>

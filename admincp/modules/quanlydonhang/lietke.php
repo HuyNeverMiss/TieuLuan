@@ -1,4 +1,4 @@
-<p class="content1" style="margin-top:15px;">Liệt kê đơn hàng</p>
+<p class="content1" style="width:98.8%; height:40px; background-color:rgb(235, 231, 231);text-align:center;font-size:30px;font-weight:600;line-height:40px;margin: 20px 10px;">Liệt kê đơn hàng</p>
 <!-- <?php
 	$sql_lietke_dh = "SELECT * FROM tbl_donhang,tbl_khachhang WHERE tbl_donhang.id_khachhang=tbl_khachhang.id_khachhang 
   ORDER BY tbl_donhang.id_donhang DESC";

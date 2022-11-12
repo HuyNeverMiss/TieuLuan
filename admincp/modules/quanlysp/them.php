@@ -33,10 +33,10 @@
     </script>
   </head>
   <body>
-    <div id="piechart_3d" style="width: 700px; height: 300px;"></div>
+    <div id="piechart_3d" style="width: 800px; height: 300px;"></div>
   </body>
 </html>
-<p style="font-size: 30px;margin-top:15px;text-align:center;"><b>Thêm sản phẩm</b></p>
+<p style="width:98.8%; height:40px; background-color:rgb(235, 231, 231);text-align:center;font-size:30px;font-weight:600;line-height:40px;margin: 20px 10px;"><b>Thêm sản phẩm</b></p>
 <table class="table table-hover table-dark" border="1px" style="width: 100%;" style="border-collapse: collapse;">
     <form method="POST" action="modules/quanlysp/xuly.php" enctype="multipart/form-data">
         <tr>
