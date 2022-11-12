@@ -36,7 +36,11 @@
             $sql_update = "UPDATE tbl_nhaphang SET tensanpham='".$tensanpham."', gianhap='".$gianhap."', soluong1='".$soluong1."', tinhtrang='".$tinhtrang."',id_ncc ='".$nhacungcap."',id_danhmuc ='".$danhmuc."' WHERE id_nhaphang='$_GET[idnhaphang]'";
         }
         mysqli_query($mysqli,$sql_update);
-        header('Location:../../index.php?action=quanlynhaphang&query=them');
+        if(isset($_GET['trang'])){
+            header('Location:../../index.php?action=quanlynhaphang&query=them&trang='.$_GET['trang'].'#list1');
+        }else{
+            header('Location:../../index.php?action=quanlynhaphang&query=them&trang=1#list1');;
+        }
     }else{
         $id = $_GET['idnhaphang'];
         $sql = "SELECT * FROM tbl_nhaphang WHERE id_nhaphang = '$id' LIMIT 1";

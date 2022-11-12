@@ -65,7 +65,7 @@
         </tr>
         <tr>
             <td>Hình ảnh</td>
-            <td><input type="file" name="hinhanh" multiple></td>
+            <td><input class="input-group-text" type="file" name="hinhanh" multiple></td>
         </tr>
         <tr>
             <td>Tóm tắt</td>

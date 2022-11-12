@@ -7,7 +7,7 @@
     <?php
   while($row = mysqli_fetch_array($query_sua_sp)){
 ?>
-    <form method="POST" action="modules/quanlysp/xuly.php?idsanpham=<?php echo $row['id_sanpham']?>"
+    <form method="POST" action="modules/quanlysp/xuly.php?idsanpham=<?php echo $row['id_sanpham']?>&trang=<?php echo $_GET['trang']?>"
         enctype="multipart/form-data">
         <tr>
             <td>Tên sản phẩm</td>
@@ -36,7 +36,7 @@
         <tr>
             <td>Hình ảnh</td>
             <td>
-                <input type="file" name="hinhanh">
+                <input class="input-group-text" type="file" name="hinhanh">
                 <img src="modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>" width="150px">
             </td>
         </tr>

@@ -82,6 +82,60 @@
 
     })
     </script>
+    <div id="webchat">
+    <style>
+        .rw-conversation-container .rw-header {background-color: #ff5e14;}
+        .rw-conversation-container .rw-client {background-color: #ff5e14;}
+        .rw-conversation-container .rw-response {font-size: 15px; font-weight: 500;}
+        .rw-conversation-container .rw-image-frame {width: 50%;}
+    </style>
+<script>!(function () {
+        let e = document.createElement("script"),
+            t = document.head || document.getElementsByTagName("head")[0];
+
+        (e.src =
+            "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+            // Replace 1.x.x with the version that you want
+            (e.async = !0),
+            (e.onload = () => {
+                window.WebChat.default(
+                    {
+                        customData: { language: "en" },
+                        socketUrl: "http://localhost:5005",
+                        // add other props here
+                        title: 'GEMSTONEs BOT',
+                        subtitle: 'Say hi and get started!',
+                        profileAvatar: "https://cdn1.iconfinder.com/data/icons/web-65/48/78-512.png",
+                        showFullScreenButton: true,
+                        showMessageDate: true,
+                        inputTextFieldHint: "Nhập tư vấn để được tư vấn..",
+                    },
+                    null
+                );
+            }),
+            t.insertBefore(e, t.firstChild);
+    })();
+    var minute = 1; // to clear the localStorage after 1 minute
+    var now = new Date().getTime();
+    var setupTime = localStorage.getItem('setupTime');
+    if (setupTime == null) {
+        localStorage.setItem('setupTime', now)
+    } else {
+        if(now-setupTime > minute*1*60*1000) {
+            localStorage.clear()
+            localStorage.setItem('setupTime', now);
+        }else{
+            <?php
+                if(isset($_GET['dangxuat'])){
+                    ?>
+                    localStorage.clear();
+                    <?php
+                }
+                    ?>
+        }
+    }
+    </script>
+</div>
 </body>
 
 </html>

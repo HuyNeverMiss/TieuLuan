@@ -60,9 +60,18 @@
 	}else{
 		$begin = ($page-1)* 10;
 	}
-	$sql_pro = "SELECT * FROM tbl_sanpham,tbl_danhmuc,tbl_nhacungcap WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.id_ncc =tbl_nhacungcap.id ORDER BY id_sanpham DESC LIMIT $begin,10";
-	$query_pro = mysqli_query($mysqli,$sql_pro);
-	
+  if(!empty($_POST['ten'])){
+    $_SESSION['filter'] = $_POST;
+    $ten = $_POST['ten'];
+    if(!empty($_SESSION['filter'])){
+      extract($_SESSION['filter']);
+    }
+    $sql_pro = "SELECT `tbl_nhacungcap`.`tennhacungcap`, `tbl_sanpham`.* , `tbl_danhmuc`.`tendanhmuc` FROM tbl_sanpham JOIN tbl_danhmuc ON tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc JOIN tbl_nhacungcap ON tbl_sanpham.id_ncc=tbl_nhacungcap.id WHERE tensanpham LIKE '%".$ten."%' ORDER BY id_sanpham DESC";
+	  $query_pro = mysqli_query($mysqli,$sql_pro);
+  }else{
+    $sql_pro = "SELECT * FROM tbl_sanpham,tbl_danhmuc,tbl_nhacungcap WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.id_ncc =tbl_nhacungcap.id ORDER BY id_sanpham DESC LIMIT $begin,10";
+    $query_pro = mysqli_query($mysqli,$sql_pro);
+  }	
 ?>
 <div style="clear:both;"></div>
 <style type="text/css">
@@ -93,10 +102,27 @@ ul.list_trang li a {
 }
 </style>
 <?php
-$sql_trang = mysqli_query($mysqli,"SELECT * FROM tbl_sanpham,tbl_danhmuc,tbl_nhacungcap WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.id_ncc =tbl_nhacungcap.id");
+if(!empty($_POST['ten'])){
+  $_SESSION['filter'] = $_POST;
+  $ten = $_POST['ten'];
+  if(!empty($_SESSION['filter'])){
+    extract($_SESSION['filter']);
+  }
+  $sql_trang = mysqli_query($mysqli,"SELECT `tbl_nhacungcap`.`tennhacungcap`, `tbl_sanpham`.* , `tbl_danhmuc`.`tendanhmuc` FROM tbl_sanpham JOIN tbl_danhmuc ON tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc JOIN tbl_nhacungcap ON tbl_sanpham.id_ncc=tbl_nhacungcap.id WHERE tensanpham LIKE '%".$ten."%'");
+}else{
+  $sql_trang = mysqli_query($mysqli,"SELECT * FROM tbl_sanpham,tbl_danhmuc,tbl_nhacungcap WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.id_ncc =tbl_nhacungcap.id");
+}
 $row_count = mysqli_num_rows($sql_trang);  
 $trang = ceil($row_count/10);
 ?>
+<form style="font-weight: 700;font-size:15px;padding:0px;" action="index.php?action=quanlysp&query=them#list" method="POST">
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <input style="padding: 0px 15px;" type="submit" value="Tìm kiếm">
+  </div>
+  <input type="text" class="form-control" placeholder="Tên sản phẩm..." name="ten" value="<?=!empty($ten)?$ten:""?>">
+</div>
+</form>
 <p style="font-weight: 600;">Trang hiện tại : <?php echo $page ?>/<?php echo $trang ?> </p>
 
 <ul class="list_trang">
@@ -166,7 +192,13 @@ $trang = ceil($row_count/10);
         echo '<b style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: red;">Inactive</b>';
       } ?></td>
         <td> 
-            <p><a href="?action=quanlysp&query=sua&idsanpham=<?php echo $row['id_sanpham'] ?>"
+            <p><a href="?action=quanlysp&query=sua&idsanpham=<?php echo $row['id_sanpham'] ?>&trang=<?php 
+                if(isset($_GET['trang'])){
+                  echo $_GET['trang'];
+                }else{
+                  echo '1';
+                }
+            ?>"
                 style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: #0062cc;"><i class="ti-pencil"></i></a></p>
             <p><a href="modules/quanlysp/xuly.php?idsanpham=<?php echo $row['id_sanpham'] ?>"
                 style="color:aliceblue; padding: 10px 15px; border-radius: 4px;  background-color: red;"><i class="ti-trash"></i></a></p>

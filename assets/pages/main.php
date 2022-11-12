@@ -129,6 +129,6 @@ SKU Number: LR8280
             </div></div>
 </div>
 <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/2C400526DC472B3D1935C7818CD61995_video_dashinit.mp4"></video>
-<video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/2C400526DC472B3D1935C7818CD61995_video_dashinit.mp4"></video>
+<video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/4044B76FB723ACE571BCB4494BE396AF_video_dashinit.mp4"></video>
 <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/2C400526DC472B3D1935C7818CD61995_video_dashinit.mp4"></video>
 </div>

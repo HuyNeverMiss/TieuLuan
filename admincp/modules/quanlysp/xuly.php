@@ -40,7 +40,11 @@
             tomtat='".$tomtat."', noidung='".$noidung."',sale='".$sale."',tinhtrang='".$tinhtrang."',id_danhmuc='".$danhmuc."',id_ncc ='".$nhacungcap."',id_nh ='".$tenhang."' WHERE id_sanpham='$_GET[idsanpham]'";
         }
         mysqli_query($mysqli,$sql_update);
-        header('Location:../../index.php?action=quanlysp&query=them');
+        if(isset($_GET['trang'])){
+            header('Location:../../index.php?action=quanlysp&query=them&trang='.$_GET['trang'].'#list');
+        }else{
+            header('Location:../../index.php?action=quanlysp&query=them&trang=1#list');;
+        }
     }else{
         $id = $_GET['idsanpham'];
         $sql = "SELECT * FROM tbl_sanpham WHERE id_sanpham = '$id' LIMIT 1";

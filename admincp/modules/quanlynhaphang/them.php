@@ -53,7 +53,7 @@
         </tr>
         <tr>
             <td>Hình ảnh</td>
-            <td><input type="file" name="hinhanh"></td>
+            <td><input class="input-group-text" type="file" name="hinhanh"></td>
         </tr>
         <tr>
             <td>Nhà cung cấp</td>
