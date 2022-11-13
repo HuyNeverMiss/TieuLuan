@@ -10,6 +10,7 @@
 	}else{
 		$begin = ($page-1)* 6;
 	}
+    $luotxem = rand(0,9999);
     if(!empty($_POST) && !empty($_SESSION['id_khachhang'])){
         $star=$_POST['star'];
         $id_product=$_GET['id'];
@@ -89,6 +90,7 @@
                     echo '(Chưa có đánh giá)';
                 }
             ?></p>
+            <p style="font-weight: 600; font-style:italic; color:grey;">View : <?php echo $luotxem ?> lượt xem</p>
             <?php
             if($row_chitiet['tinhtrang']==1 && $row_chitiet['soluong']>0){
             ?>
@@ -146,6 +148,7 @@
                     echo '(Chưa có đánh giá)';
                 }
             ?></p>
+            <p style="font-weight: 600; font-style:italic; color:grey;">View : <?php echo $luotxem ?> lượt xem</p>
             <?php
             if($row_chitiet['tinhtrang']==1 && $row_chitiet['soluong']>0){
             ?>
@@ -197,7 +200,7 @@
             <form method="post" action="">
                 <p style="width:98.8%; height:40px; background-color:rgb(235, 231, 231); text-align:center;font-size:30px;font-weight:700;line-height:40px;margin: 20px 10px;">Bình Luận</p>
                 <textarea style="border: solid 5px;border-color: rgb(0 0 0 / 8%);" name="comment" id="" cols="150" rows="3" placeholder="Bình luận tối thiểu phải 10 ký tự"></textarea>
-                <select d="star" name="star" style="color:#ffb800;font-size: 25px;font-weight:700;border:solid 6px;border-color: lightgrey">
+                <select id="star" name="star" style="color:#ffb800;font-size: 25px;font-weight:700;border:solid 6px;border-color: lightgrey">
                     <option value="1">★☆☆☆☆</option>
                     <option value="2">★★☆☆☆</option>
                     <option value="3">★★★☆☆</option>

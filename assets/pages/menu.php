@@ -29,7 +29,16 @@
         ?>
         </ul>
     </li>
-            <li><a href="index.php?quanly=giohang#main_list"><i class="ti-shopping-cart"></i>GIỎ HÀNG</a></li>
+            <li><a href="index.php?quanly=giohang#main_list"><i class="ti-shopping-cart"></i>Cart (
+            <?php 
+                if(isset($_SESSION['cart'])){
+                    echo count($_SESSION['cart']);
+                }else{
+                    echo '0';
+                }
+            ?>
+            )
+        </a></li>
     <li>
         <a href="#main">
             More

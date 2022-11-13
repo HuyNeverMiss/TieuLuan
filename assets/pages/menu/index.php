@@ -10,9 +10,20 @@
 	}else{
 		$begin = ($page-1)* 10;
 	}
-	$sql_pro = "SELECT * FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc ORDER BY tbl_sanpham.id_sanpham ASC LIMIT $begin,10";
-	$query_pro = mysqli_query($mysqli,$sql_pro);
-	
+  if(isset($_GET['sort'])){
+    if($_GET['sort']=='desc'){
+      $sql_pro = "SELECT * FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc ORDER BY tbl_sanpham.giasp DESC LIMIT $begin,10";
+    }elseif($_GET['sort']=='asc'){
+      $sql_pro = "SELECT * FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc ORDER BY tbl_sanpham.giasp ASC LIMIT $begin,10";
+    }else{
+      $sql_pro = "SELECT * FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc ORDER BY tbl_sanpham.id_sanpham ASC LIMIT $begin,10";
+    }
+    $query_pro = mysqli_query($mysqli,$sql_pro);
+}else{
+  $sql_pro = "SELECT * FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc ORDER BY tbl_sanpham.id_sanpham ASC LIMIT $begin,10";
+  $query_pro = mysqli_query($mysqli,$sql_pro);
+}
+  
 ?>
 <p class="content">SẢN PHẨM NỔI BẬT</p>
         <video style="width: 33%;" playsinline="" loop="loop" autoplay="autoplay" muted="muted" src="assets/img/KoiRing4x5.mp4"></video>
@@ -65,7 +76,17 @@ Theo truyền thuyết, cá Koi là hình ảnh ẩn dụ về sự quyết tâm
               </a>
             </div></div>
 </div>
-<ul class="product_list">
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label style="background-color: #d39e00;" class="input-group-text" for="inputGroupSelect01">Sắp xếp</label>
+  </div>
+    <select id="sort-box" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+      <option value="">None</option>  
+      <option value="?field=price&sort=desc#product_list">Giá giảm dần</option>
+        <option value="?field=price&sort=asc#product_list">Giá tăng dần</option>
+    </select>
+</div>
+<ul id="product_list" class="product_list">
     <?php
 				while($row = mysqli_fetch_array($query_pro)){ 
 			?>
@@ -140,7 +161,19 @@ $trang = ceil($row_count/10);
 	for($i=1;$i<=$trang;$i++){ 
 	?>
     <li <?php if($i==$page){echo 'style="background: brown;"';}else{ echo ''; }  ?>><a
-            href="index.php?trang=<?php echo $i ?>#main_list"><?php echo $i ?></a></li>
+            href="index.php?<?php
+            if(isset($_GET['sort'])){
+                if($_GET['sort']=='desc'){
+                  echo 'field=price&sort=desc&';
+                }elseif($_GET['sort']=='asc'){
+                  echo 'field=price&sort=asc&';
+                }else{
+                  echo '';
+                }
+              }else{
+                echo '';
+              }
+            ?>trang=<?php echo $i ?>#product_list"><?php echo $i ?></a></li>
     <?php
 	} 
 	?>
