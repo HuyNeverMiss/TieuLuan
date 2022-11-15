@@ -18,6 +18,7 @@
     <label style="background-color: #d39e00;" class="input-group-text" for="inputGroupSelect01">Options</label>
   </div>
     <select class="custom-select">
+    <option>--Select date--</option>
         <option value="7ngay">7 ngày qua</option>
         <option value="28ngay">28 ngày qua</option>
         <option value="90ngay">90 ngày qua</option>
@@ -39,6 +40,6 @@
 <div class="thongke" style="margin-top:60px; margin-bottom:60px;">
     <i style="font-size: 80px;font-weight:500;margin: 80px 80px;" class="ti-bag"><a href="index.php?action=quanlydonhang&query=lietke" style="font-size:20px;background-color: lightgreen;border-radius: 80%; padding: 15px;"><?php echo $count2?> Đơn hàng</a></i>
     <i style="font-size: 80px;font-weight:500; margin: 80px 80px;" class="ti-truck"><a style="font-size:20px;background-color: lightgreen; margin-left: 5px; border-radius: 80%; padding: 15px;"><?php echo $count1?> Đã giao</a></i>
-    <i style="font-size: 80px;font-weight:500; margin: 80px 80px;" class="ti-user"><a style="font-size:20px;background-color: lightgreen; margin-left: 5px; border-radius: 80%; padding: 15px;"><?php echo $count?> Thành viên</a></i>
+    <i style="font-size: 80px;font-weight:500; margin: 80px 80px;" class="ti-user"><a href="index.php?action=quanlythanhvien&query=them" style="font-size:20px;background-color: lightgreen; margin-left: 5px; border-radius: 80%; padding: 15px;"><?php echo $count?> Thành viên</a></i>
 </div>
 <div id="chart" style="height: 250px;background-color: white"></div>

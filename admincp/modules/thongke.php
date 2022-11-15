@@ -23,7 +23,7 @@
 	}
     $now = Carbon::now('Asia/Ho_Chi_Minh')->toDateString(); 
 
-    $sql = "SELECT * FROM tbl_thongke WHERE ngaydh BETWEEN '$subdays' AND '$now' ORDER BY ngaydh ASC";
+    $sql = "SELECT * FROM tbl_thongke WHERE ngaydh BETWEEN '$subdays-1' AND '$now' ORDER BY ngaydh ASC";
     $sql_query = mysqli_query($mysqli,$sql);
 
     while($val = mysqli_fetch_array($sql_query)){

@@ -40,7 +40,7 @@
         title: "Thông kê hàng lợi nhuận",
         width: 2000,
         height: 300,
-        bar: {groupWidth: "30%"},
+        bar: {groupWidth: "40%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
